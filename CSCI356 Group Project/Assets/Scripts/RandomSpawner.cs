@@ -48,7 +48,7 @@ public class RandomSpawner : MonoBehaviour
             Vector3 randomPos = new Vector3(randomPos2D.x, spawnHeight, randomPos2D.y) + transform.position;
             
             // Instantiate at random position
-            GameObject newObject = Instantiate(spawnPrefab, randomPos, Quaternion.identity);
+            GameObject newObject = Instantiate(spawnPrefab, randomPos, Quaternion.LookRotation(Vector3.forward, Vector3.up));
 
             // Increment count
             currentCount++;
