@@ -10,6 +10,7 @@ public class SlimeAI : MonoBehaviour
     [SerializeField]
     private float upForce = 1.0f;
 
+    private Animator animator;
     private GameObject player;
     private Rigidbody rb;
     private bool isJumping;
@@ -19,6 +20,7 @@ public class SlimeAI : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
         isJumping = true;
     }
 
@@ -39,8 +41,6 @@ public class SlimeAI : MonoBehaviour
             jump.y = upForce;
             rb.AddForce(jump, ForceMode.Impulse);
 
-            Debug.Log(jump);
-
             isJumping = true;
         }
     }
@@ -49,9 +49,20 @@ public class SlimeAI : MonoBehaviour
     {
         if (isJumping && collision.collider.tag == "Ground")
         {
-            Debug.Log("COllide with ground");
-
+            //Debug.Log("Collide with ground");
             isJumping = false;
         }
+    }
+
+    public void Damaged()
+    {
+        animator.SetTrigger("Damaged");
+        rb.isKinematic = true;
+    }
+
+    public void OnDeathAnimationFinished()
+    {
+        Debug.Log("Dead");
+        Destroy(gameObject);
     }
 }
