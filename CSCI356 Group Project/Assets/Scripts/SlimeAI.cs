@@ -13,7 +13,7 @@ public class SlimeAI : MonoBehaviour
     private Animator animator;
     private GameObject player;
     private Rigidbody rb;
-    private bool isJumping;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,6 @@ public class SlimeAI : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
-        isJumping = true;
     }
 
     // Update is called once per frame
@@ -30,9 +29,9 @@ public class SlimeAI : MonoBehaviour
         // If player detected within detectionRange, run
         Vector3 vectorToSlime = transform.position - player.transform.position;
 
-        Debug.Log(vectorToSlime.magnitude);
-
-        if (vectorToSlime.magnitude < detectionRange && !isJumping)
+        if (animator.GetBool("Jump") == false &&
+            animator.GetBool("Damaged") == false &&
+            vectorToSlime.magnitude < detectionRange)
         {
             vectorToSlime.y = 0;
             transform.rotation = Quaternion.LookRotation(vectorToSlime);
@@ -41,23 +40,33 @@ public class SlimeAI : MonoBehaviour
             jump.y = upForce;
             rb.AddForce(jump, ForceMode.Impulse);
 
-            isJumping = true;
+            animator.SetBool("Jump", true);
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (isJumping && collision.collider.tag == "Ground")
+        if (animator.GetBool("Jump") && collision.collider.tag == "Ground")
         {
-            //Debug.Log("Collide with ground");
-            isJumping = false;
+            animator.SetBool("Jump", false);
         }
+
+        if (collision.collider.tag == "Projectile")
+        {
+            // Face the projectile
+            Vector3 vectorToProjectile = collision.transform.position - transform.position;
+            vectorToProjectile.y = 0;
+            transform.rotation = Quaternion.LookRotation(vectorToProjectile);
+
+            Damage();
+        }
+
     }
 
-    public void Damaged()
+    public void Damage()
     {
-        animator.SetTrigger("Damaged");
-        rb.isKinematic = true;
+        // Play damage animation
+        animator.SetBool("Damaged", true);
     }
 
     public void OnDeathAnimationFinished()
@@ -65,4 +74,5 @@ public class SlimeAI : MonoBehaviour
         Debug.Log("Dead");
         Destroy(gameObject);
     }
+
 }
