@@ -43,6 +43,17 @@ public class SlimeAI : MonoBehaviour
 
             animator.SetBool("Jump", true);
         }
+        else if(animator.GetBool("Jump") == false &&
+            animator.GetBool("Damaged") == false)
+        {
+            transform.rotation = Quaternion.Euler(Vector3.up * Random.Range(0, 360));
+
+            Vector3 jump = transform.forward.normalized;
+            jump.y = upForce;
+            rb.AddForce(jump, ForceMode.Impulse);
+
+            animator.SetBool("Jump", true);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
