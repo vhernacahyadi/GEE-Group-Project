@@ -10,10 +10,14 @@ public class SlimeAI : MonoBehaviour
     [SerializeField]
     private float upForce = 1.0f;
 
+    [SerializeField]
+    private float runSpeed = 1.0f;
+
     private Animator animator;
     private GameObject player;
     private Rigidbody rb;
 
+    private bool isJumping;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +25,8 @@ public class SlimeAI : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+
+        isJumping = true;
     }
 
     // Update is called once per frame
@@ -28,23 +34,22 @@ public class SlimeAI : MonoBehaviour
     {
         // If player detected within detectionRange, run
         Vector3 vectorToSlime = transform.position - player.transform.position;
-
-        if (animator.GetBool("Jump") == false &&
-            animator.GetBool("Damaged") == false &&
+        if (isJumping == false && animator.GetBool("Damaged") == false &&
             vectorToSlime.magnitude < detectionRange)
         {
             vectorToSlime.y = 0;
             transform.rotation = Quaternion.LookRotation(vectorToSlime);
             transform.rotation = Quaternion.Euler(Vector3.up * Random.Range(-90, 90));
 
-            Vector3 jump = transform.forward.normalized;
+            Vector3 jump = transform.forward.normalized * runSpeed;
             jump.y = upForce;
             rb.AddForce(jump, ForceMode.Impulse);
 
-            animator.SetBool("Jump", true);
+            isJumping = true;
         }
-        else if(animator.GetBool("Jump") == false &&
-            animator.GetBool("Damaged") == false)
+
+        // Idle move
+        else if (isJumping == false && animator.GetBool("Damaged") == false)
         {
             transform.rotation = Quaternion.Euler(Vector3.up * Random.Range(0, 360));
 
@@ -52,15 +57,15 @@ public class SlimeAI : MonoBehaviour
             jump.y = upForce;
             rb.AddForce(jump, ForceMode.Impulse);
 
-            animator.SetBool("Jump", true);
+            isJumping = true;
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (animator.GetBool("Jump") && collision.collider.tag == "Ground")
+        if (isJumping && collision.collider.tag == "Ground")
         {
-            animator.SetBool("Jump", false);
+            isJumping = false;
         }
 
         if (collision.collider.tag == "Projectile")
