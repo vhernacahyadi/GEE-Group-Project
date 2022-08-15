@@ -37,4 +37,9 @@ public class gunShooter : MonoBehaviour
             newBulletPrefab.GetComponent<Rigidbody>().AddForce(directionOfFire * bulletForce, ForceMode.Impulse);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+    }
 }
