@@ -39,7 +39,7 @@ public class SlimeAI : MonoBehaviour
         {
             vectorToSlime.y = 0;
             transform.rotation = Quaternion.LookRotation(vectorToSlime);
-            transform.rotation = Quaternion.Euler(Vector3.up * Random.Range(-90, 90));
+            transform.rotation = Quaternion.Euler(Vector3.up * Random.Range(-45, 45));
 
             Vector3 jump = transform.forward.normalized * runSpeed;
             jump.y = upForce;
@@ -51,7 +51,7 @@ public class SlimeAI : MonoBehaviour
         // Idle move
         else if (isJumping == false && animator.GetBool("Damaged") == false)
         {
-            transform.rotation = Quaternion.Euler(Vector3.up * Random.Range(0, 360));
+            transform.rotation = Quaternion.Euler(Vector3.up * Random.Range(-90, 90));
 
             Vector3 jump = transform.forward.normalized;
             jump.y = upForce;
@@ -78,6 +78,21 @@ public class SlimeAI : MonoBehaviour
             Damage();
         }
 
+    }
+    
+    private void OnCollisionStay(Collision collision)
+    {
+
+        if (!isJumping && collision.collider.tag == "Boundary")
+        {
+            transform.rotation = Quaternion.Euler(Vector3.up * 180);
+
+            Vector3 jump = transform.forward.normalized * runSpeed;
+            jump.y = upForce;
+            rb.AddForce(jump, ForceMode.Impulse);
+
+            isJumping = true;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
