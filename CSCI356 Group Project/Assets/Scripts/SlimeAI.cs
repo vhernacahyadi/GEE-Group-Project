@@ -35,8 +35,9 @@ public class SlimeAI : MonoBehaviour
         {
             vectorToSlime.y = 0;
             transform.rotation = Quaternion.LookRotation(vectorToSlime);
+            transform.rotation = Quaternion.Euler(Vector3.up * Random.Range(-90, 90));
 
-            Vector3 jump = vectorToSlime.normalized;
+            Vector3 jump = transform.forward.normalized;
             jump.y = upForce;
             rb.AddForce(jump, ForceMode.Impulse);
 
