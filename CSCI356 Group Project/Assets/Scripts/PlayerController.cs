@@ -8,8 +8,10 @@ public class PlayerController : MonoBehaviour
     //[SerializeField] private const float RotateSpeed = 20.0f;
 
     [SerializeField] private float Speed = 5.0f;
+    [SerializeField] private float jumpPower = 5;
     private Animator playerAnimator;
     private bool isShooting = true;
+    private bool isJump;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,7 @@ public class PlayerController : MonoBehaviour
                 playerAnimator.SetTrigger("run");
                 isShooting = false;
             }
+            
         }
         else
         {
@@ -41,5 +44,19 @@ public class PlayerController : MonoBehaviour
         }
 
         transform.Translate(mvX, 0, mvZ);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            isJump = true;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (isJump)
+        {
+            transform.GetComponent<Rigidbody>().AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
+            isJump = false;
+        }
     }
 }
