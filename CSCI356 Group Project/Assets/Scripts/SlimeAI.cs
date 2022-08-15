@@ -35,8 +35,20 @@ public class SlimeAI : MonoBehaviour
         {
             vectorToSlime.y = 0;
             transform.rotation = Quaternion.LookRotation(vectorToSlime);
+            transform.rotation = Quaternion.Euler(Vector3.up * Random.Range(-90, 90));
 
-            Vector3 jump = vectorToSlime.normalized;
+            Vector3 jump = transform.forward.normalized;
+            jump.y = upForce;
+            rb.AddForce(jump, ForceMode.Impulse);
+
+            animator.SetBool("Jump", true);
+        }
+        else if(animator.GetBool("Jump") == false &&
+            animator.GetBool("Damaged") == false)
+        {
+            transform.rotation = Quaternion.Euler(Vector3.up * Random.Range(0, 360));
+
+            Vector3 jump = transform.forward.normalized;
             jump.y = upForce;
             rb.AddForce(jump, ForceMode.Impulse);
 
@@ -53,10 +65,24 @@ public class SlimeAI : MonoBehaviour
 
         if (collision.collider.tag == "Projectile")
         {
-            // Face the projectile
-            Vector3 vectorToProjectile = collision.transform.position - transform.position;
-            vectorToProjectile.y = 0;
-            transform.rotation = Quaternion.LookRotation(vectorToProjectile);
+            // Face the player
+            Vector3 vectorToPlayer = player.transform.position - transform.position;
+            vectorToPlayer.y = 0;
+            transform.rotation = Quaternion.LookRotation(vectorToPlayer);
+
+            Damage();
+        }
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Projectile")
+        {
+            // Face the player
+            Vector3 vectorToPlayer = player.transform.position - transform.position;
+            vectorToPlayer.y = 0;
+            transform.rotation = Quaternion.LookRotation(vectorToPlayer);
 
             Damage();
         }
