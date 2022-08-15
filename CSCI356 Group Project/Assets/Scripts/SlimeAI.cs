@@ -53,10 +53,10 @@ public class SlimeAI : MonoBehaviour
 
         if (collision.collider.tag == "Projectile")
         {
-            // Face the projectile
-            Vector3 vectorToProjectile = player.transform.position - transform.position;
-            vectorToProjectile.y = 0;
-            transform.rotation = Quaternion.LookRotation(vectorToProjectile);
+            // Face the player
+            Vector3 vectorToPlayer = player.transform.position - transform.position;
+            vectorToPlayer.y = 0;
+            transform.rotation = Quaternion.LookRotation(vectorToPlayer);
 
             Damage();
         }
