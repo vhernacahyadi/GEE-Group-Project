@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6891580169314388076, guid: 66ae442726d1cf4428dacb34edd61ac4, type: 3}
       propertyPath: m_TagString
-      value: Respawn
+      value: Target
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66ae442726d1cf4428dacb34edd61ac4, type: 3}
@@ -97,9 +97,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.3
-  m_Height: 0.6
+  m_Height: 0.7
   m_Direction: 1
-  m_Center: {x: 0, y: 0.4, z: 0}
+  m_Center: {x: 0, y: 0.33, z: 0}
 --- !u!95 &254947753
 Animator:
   serializedVersion: 4
@@ -134,3 +134,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectionRange: 4
   upForce: 4
+  runSpeed: 4
