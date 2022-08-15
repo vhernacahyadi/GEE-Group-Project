@@ -38,8 +38,5 @@ public class gunShooter : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        
-    }
+    
 }
