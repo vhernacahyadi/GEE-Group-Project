@@ -5,17 +5,19 @@ using UnityEngine;
 public class gunShooter : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] Camera playerCamera;
+    [SerializeField] private Camera playerCamera;
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private float bulletForce = 10f;
+    [SerializeField] private AudioClip gunShootClip;
 
     private RaycastHit hitInfo;
+    private AudioSource gunAudio;
     GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-          
+        gunAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,8 +35,10 @@ public class gunShooter : MonoBehaviour
             }
 
             //Spawn bullet
+            gunAudio.PlayOneShot(gunShootClip);
             GameObject newBulletPrefab = GameObject.Instantiate(bulletPrefab, spawnPoint.transform.position, Quaternion.identity);
             newBulletPrefab.GetComponent<Rigidbody>().AddForce(directionOfFire * bulletForce, ForceMode.Impulse);
+           
         }
     }
 

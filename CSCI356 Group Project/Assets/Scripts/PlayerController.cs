@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float Speed = 5.0f;
     [SerializeField] private float jumpPower = 5;
     private Animator playerAnimator;
+    private AudioSource playerAudio;
     private bool isShooting = true;
     private bool isJump;
 
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerAnimator = GetComponent<Animator>();
+        playerAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,19 +29,22 @@ public class PlayerController : MonoBehaviour
 
         if(mvX != 0 || mvZ != 0)
         {
+            // set trigger to run and play running audio
             if (isShooting)
             {
                 playerAnimator.SetTrigger("run");
                 isShooting = false;
+                playerAudio.Play();
             }
-            
         }
         else
         {
+            // set trigger to shoot and stop running audio
             if (!isShooting)
             {
                 playerAnimator.SetTrigger("shoot");
                 isShooting = true;
+                playerAudio.Stop();
             }
         }
 
@@ -53,6 +58,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // make player jump
         if (isJump)
         {
             transform.GetComponent<Rigidbody>().AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
