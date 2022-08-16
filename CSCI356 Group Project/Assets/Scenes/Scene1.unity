@@ -228,6 +228,10 @@ PrefabInstance:
       propertyPath: bulletForce
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 6705007591927311321, guid: 8ec7169b698b4df4a9dff6aca07ceb6d, type: 3}
+      propertyPath: gunShootClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e8ba64cc738a134b9b9e778b97e81df, type: 3}
     - target: {fileID: 6705007591927311324, guid: 8ec7169b698b4df4a9dff6aca07ceb6d, type: 3}
       propertyPath: m_Name
       value: TT_demo_female
