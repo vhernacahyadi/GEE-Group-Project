@@ -8,6 +8,9 @@ public class RandomSpawner : MonoBehaviour
     private GameObject spawnPrefab;
 
     [SerializeField]
+    private float startDelay;
+
+    [SerializeField]
     private float interval;
 
     [SerializeField]
@@ -38,6 +41,8 @@ public class RandomSpawner : MonoBehaviour
 
     IEnumerator Spawn()
     {
+        yield return new WaitForSeconds(startDelay);
+
         while (currentCount < maxSpawn)
         {
             // Debug
