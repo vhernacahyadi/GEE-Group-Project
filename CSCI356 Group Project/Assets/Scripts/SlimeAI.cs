@@ -71,7 +71,7 @@ public class SlimeAI : MonoBehaviour
         // Idle move
         else if (isJumping == false && animator.GetBool("Damaged") == false)
         {
-            transform.Rotate(0, Random.Range(0,90), 0, Space.Self);
+            transform.Rotate(0, Random.Range(0,120), 0, Space.Self);
 
             Vector3 jump = transform.forward.normalized;
             jump.y = upForce;
@@ -105,7 +105,7 @@ public class SlimeAI : MonoBehaviour
 
         if (!isJumping && collision.collider.tag == "Boundary")
         {
-            transform.rotation = Quaternion.Euler(Vector3.up * 180);
+            transform.Rotate(0, Random.Range(120, 270), 0, Space.Self);
 
             Vector3 jump = transform.forward.normalized * runSpeed;
             jump.y = upForce;

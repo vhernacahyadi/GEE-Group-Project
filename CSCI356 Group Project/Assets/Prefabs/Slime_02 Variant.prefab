@@ -124,6 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70064a91cfc1fc24fa3ce3ef0e9264da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpSound: {fileID: 8300000, guid: f54b43710f59d554b9391208ee23d0d4, type: 3}
+  damageSound: {fileID: 8300000, guid: 5a7bed11ed53fa54587edca886c73a56, type: 3}
   detectionRange: 10
-  upForce: 6
-  runSpeed: 6
+  upForce: 8
+  runSpeed: 8
