@@ -5,6 +5,12 @@ using UnityEngine;
 public class SlimeAI : MonoBehaviour
 {
     [SerializeField]
+    private AudioClip jumpSound;
+
+    [SerializeField]
+    private AudioClip damageSound;
+
+    [SerializeField]
     private float detectionRange = 1.0f;
 
     [SerializeField]
@@ -16,6 +22,8 @@ public class SlimeAI : MonoBehaviour
     private Animator animator;
     private GameObject player;
     private Rigidbody rb;
+    private AudioSource audioSource;
+    private AudioSource audioSource2;
 
     private bool isJumping;
 
@@ -25,6 +33,15 @@ public class SlimeAI : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource2 = gameObject.AddComponent<AudioSource>();
+
+        audioSource.clip = jumpSound;
+        audioSource2.clip = damageSound;
+
+        audioSource.volume = 0.2f;
+        audioSource2.volume = 0.2f;
 
         isJumping = true;
     }
@@ -37,9 +54,12 @@ public class SlimeAI : MonoBehaviour
         if (isJumping == false && animator.GetBool("Damaged") == false &&
             vectorToSlime.magnitude < detectionRange)
         {
+            // Play jump sound
+            audioSource.Play();
+
             vectorToSlime.y = 0;
             transform.rotation = Quaternion.LookRotation(vectorToSlime);
-            transform.rotation = Quaternion.Euler(Vector3.up * Random.Range(-45, 45));
+            transform.Rotate(0, Random.Range(-20, 20), 0, Space.Self);
 
             Vector3 jump = transform.forward.normalized * runSpeed;
             jump.y = upForce;
@@ -51,7 +71,7 @@ public class SlimeAI : MonoBehaviour
         // Idle move
         else if (isJumping == false && animator.GetBool("Damaged") == false)
         {
-            transform.rotation = Quaternion.Euler(Vector3.up * Random.Range(-90, 90));
+            transform.Rotate(0, Random.Range(0,90), 0, Space.Self);
 
             Vector3 jump = transform.forward.normalized;
             jump.y = upForce;
@@ -111,6 +131,9 @@ public class SlimeAI : MonoBehaviour
 
     public void Damage()
     {
+        // Play damaged sound
+        audioSource2.Play();
+
         // Play damage animation
         animator.SetBool("Damaged", true);
     }
