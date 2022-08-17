@@ -134,6 +134,9 @@ public class SlimeAI : MonoBehaviour
         // Play damaged sound
         audioSource2.Play();
 
+        // Increment the score in the GameManager when the slime is damaged
+        FindObjectOfType<GameManager>().AddScore(1f);
+
         // Play damage animation
         animator.SetBool("Damaged", true);
     }

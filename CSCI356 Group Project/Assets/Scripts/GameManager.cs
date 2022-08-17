@@ -5,9 +5,25 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    /*
     public GameObject mainSlime;
     public Button idleBut, walkBut,jumpBut,attackBut,damageBut0,damageBut1,damageBut2;
     public Camera cam;
+    */
+
+    public static float currentScore = 0;
+    public void EndGame()
+    {
+        Debug.Log("Game Over!");
+    }
+
+    public void AddScore(float amount)
+    {
+        Debug.Log("SCORE ADDED!");
+        currentScore += amount;
+    }
+
+    /*
     private void Start()
     {
         
@@ -36,4 +52,5 @@ public class GameManager : MonoBehaviour
     {
        mainSlime.transform.rotation = Quaternion.Euler(new Vector3(mainSlime.transform.rotation.x, cam.transform.rotation.y, mainSlime.transform.rotation.z));   
     }
+    */
 }
