@@ -150,7 +150,7 @@ public class SlimeAI : MonoBehaviour
         if (collision.collider.tag == "Boundary")
         {
             // Turn around
-            transform.Rotate(0, Random.Range(120, 240), 0, Space.Self);
+            transform.Rotate(0, Random.Range(90, 270), 0, Space.Self);
 
             Vector3 jump = transform.forward.normalized * runSpeed;
             jump.y = upForce;
@@ -168,7 +168,7 @@ public class SlimeAI : MonoBehaviour
             audioSource.Play();
 
             // Turn around
-            transform.Rotate(0, Random.Range(120, 240), 0, Space.Self);
+            transform.Rotate(0, Random.Range(90, 270), 0, Space.Self);
 
             Vector3 jump = transform.forward.normalized * runSpeed;
             jump.y = upForce;
@@ -197,7 +197,6 @@ public class SlimeAI : MonoBehaviour
         // Reduce health
         health--;
 
-        Debug.Log("Health " + health);
         if (health == 0)
         {
             // Increment the score in the GameManager when the slime is damaged
