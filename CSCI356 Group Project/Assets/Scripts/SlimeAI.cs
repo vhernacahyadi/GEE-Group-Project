@@ -17,13 +17,13 @@ public class SlimeAI : MonoBehaviour
     private AudioClip damageSound;
 
     [SerializeField]
-    private float detectionRange = 1.0f;
+    private float detectionRange;
 
     [SerializeField]
-    private float upForce = 1.0f;
+    private float upForce;
 
     [SerializeField]
-    private float runSpeed = 1.0f;
+    private float runSpeed;
 
     private Animator animator;
     private GameObject player;
@@ -150,7 +150,7 @@ public class SlimeAI : MonoBehaviour
         if (collision.collider.tag == "Boundary")
         {
             // Turn around
-            transform.Rotate(0, Random.Range(120, 240), 0, Space.Self);
+            transform.Rotate(0, Random.Range(90, 270), 0, Space.Self);
 
             Vector3 jump = transform.forward.normalized * runSpeed;
             jump.y = upForce;
@@ -162,20 +162,20 @@ public class SlimeAI : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        //if (!isJumping && collision.collider.tag == "Boundary")
-        //{
-        //    // Play jump sound
-        //    audioSource.Play();
+        if (!isJumping && collision.collider.tag == "Boundary")
+        {
+            // Play jump sound
+            audioSource.Play();
 
-        //    // Turn around
-        //    transform.Rotate(0, Random.Range(120, 240), 0, Space.Self);
+            // Turn around
+            transform.Rotate(0, Random.Range(90, 270), 0, Space.Self);
 
-        //    Vector3 jump = transform.forward.normalized * runSpeed;
-        //    jump.y = upForce;
-        //    rb.AddForce(jump, ForceMode.Impulse);
+            Vector3 jump = transform.forward.normalized * runSpeed;
+            jump.y = upForce;
+            rb.AddForce(jump, ForceMode.Impulse);
 
-        //    isJumping = true;
-        //}
+            isJumping = true;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -197,11 +197,14 @@ public class SlimeAI : MonoBehaviour
         // Reduce health
         health--;
 
-        Debug.Log("Health " + health);
         if (health == 0)
         {
             // Increment the score in the GameManager when the slime is damaged
-            FindObjectOfType<GameManager>().AddScore(point);
+            GameManager gameManager = FindObjectOfType<GameManager>();
+            if (gameManager != null)
+            {
+                gameManager.AddScore(point);
+            }
 
             // Play damaged sound
             audioSource2.Play();
