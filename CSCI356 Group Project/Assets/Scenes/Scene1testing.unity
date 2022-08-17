@@ -246,7 +246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6705007591927311327, guid: 8ec7169b698b4df4a9dff6aca07ceb6d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.51
+      value: 2.47
       objectReference: {fileID: 0}
     - target: {fileID: 6705007591927311327, guid: 8ec7169b698b4df4a9dff6aca07ceb6d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1354,6 +1354,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1204183944, guid: 86ea16581fd5b614984058f0c63fd9c5, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2184827120517728367, guid: 86ea16581fd5b614984058f0c63fd9c5, type: 3}
       propertyPath: m_Name
       value: 01_Wild
@@ -1411,6 +1415,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5060596342203960059, guid: 3617d26e26fe75d41bbdc7e947b7b1d8, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5060596342203960059, guid: 3617d26e26fe75d41bbdc7e947b7b1d8, type: 3}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5060596343139902904, guid: 3617d26e26fe75d41bbdc7e947b7b1d8, type: 3}
       propertyPath: m_Name
       value: MovingPlatform
