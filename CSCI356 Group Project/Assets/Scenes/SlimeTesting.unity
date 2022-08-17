@@ -384,6 +384,8 @@ GameObject:
   - component: {fileID: 383783679}
   - component: {fileID: 383783678}
   - component: {fileID: 383783677}
+  - component: {fileID: 383783683}
+  - component: {fileID: 383783682}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Ground
@@ -408,7 +410,7 @@ MonoBehaviour:
   interval: 0.5
   spawnRadius: 7
   spawnHeight: 0.5
-  maxSpawn: 1
+  maxSpawn: 5
 --- !u!64 &383783678
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -488,6 +490,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &383783682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383783676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c511db6d022a3c44cbb63a16524a858c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPrefab: {fileID: 1028780907410657347, guid: 35b2c73f27373044e8eaed52d1f43351, type: 3}
+  startDelay: 1
+  interval: 1
+  spawnRadius: 7
+  spawnHeight: 0.5
+  maxSpawn: 3
+--- !u!114 &383783683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383783676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c511db6d022a3c44cbb63a16524a858c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPrefab: {fileID: 8063317158961559684, guid: 420f7be94351ad445831f4c06df7c074, type: 3}
+  startDelay: 2
+  interval: 2
+  spawnRadius: 7
+  spawnHeight: 0.5
+  maxSpawn: 2
 --- !u!1001 &460062927
 PrefabInstance:
   m_ObjectHideFlags: 0
