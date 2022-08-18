@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour
     //[SerializeField] private const float RotateSpeed = 20.0f;
 
     [SerializeField] private float Speed = 5.0f;
-    [SerializeField] private float jumpPower = 5;
+    //[SerializeField] private float jumpPower = 5;
+    float jumpPower = 3;
     private Animator playerAnimator;
     private AudioSource playerAudio;
     private bool isShooting = true;

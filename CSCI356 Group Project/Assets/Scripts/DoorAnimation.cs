@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DoorAnimation : MonoBehaviour {
 
-    public float SPEED = 1.0F;  // rotation speed
+    float SPEED = 5.0F;  // rotation speed
     private int stopAngle;
     private Vector3 direction;
     private bool isOpen = false;
@@ -33,8 +33,9 @@ public class DoorAnimation : MonoBehaviour {
             stopAngle = 0;                // stop abgle 90
             direction = -Vector3.up;  // direction around Y counter clockwise
         }
-        if(Input.GetMouseButtonDown(1))
-        {
+        //if(Input.GetMouseButtonDown(1))
+            if (Input.GetKeyDown(KeyCode.E))
+            {
             stopAngle = isOpen?0:90;                // stop abgle 90
             direction = isOpen ? -Vector3.up:Vector3.up;  // direction around Y counter clockwise
             isOpen = !isOpen;
