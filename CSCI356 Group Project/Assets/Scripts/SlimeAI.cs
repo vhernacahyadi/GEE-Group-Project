@@ -102,7 +102,9 @@ public class SlimeAI : MonoBehaviour
                 }
                 transform.Rotate(0, Random.Range(-20, 20), 0, Space.Self); // add some randomness
 
-                Vector3 jump = transform.forward.normalized * runSpeed;
+                Vector3 jump = transform.forward.normalized;
+                if (toSpawnPoint.magnitude > runSpeed)
+                    jump *= runSpeed;
                 jump.y = upForce;
                 rb.AddForce(jump, ForceMode.Impulse);
 
@@ -162,20 +164,20 @@ public class SlimeAI : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (!isJumping && collision.collider.tag == "Boundary")
-        {
-            // Play jump sound
-            audioSource.Play();
+        //if (collision.collider.tag == "Boundary")
+        //{
+        //    // Play jump sound
+        //    audioSource.Play();
 
-            // Turn around
-            transform.Rotate(0, Random.Range(90, 270), 0, Space.Self);
+        //    // Turn around
+        //    transform.Rotate(0, Random.Range(90, 270), 0, Space.Self);
 
-            Vector3 jump = transform.forward.normalized * runSpeed;
-            jump.y = upForce;
-            rb.AddForce(jump, ForceMode.Impulse);
+        //    Vector3 jump = transform.forward.normalized * runSpeed;
+        //    jump.y = upForce;
+        //    rb.AddForce(jump, ForceMode.Impulse);
 
-            isJumping = true;
-        }
+        //    isJumping = true;
+        //}
     }
 
     private void OnTriggerEnter(Collider other)
