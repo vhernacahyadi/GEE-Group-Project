@@ -50,7 +50,8 @@ public class PlayerController : MonoBehaviour
 
         transform.Translate(mvX, 0, mvZ);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        //if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(1))
         {
             isJump = true;
         }
