@@ -14,12 +14,15 @@ public class PlayerController : MonoBehaviour
     private AudioSource playerAudio;
     private bool isShooting = true;
     private bool isJump;
+    private Rigidbody rb;
+    public Transform orientation;
 
     // Start is called before the first frame update
     void Start()
     {
         playerAnimator = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -28,7 +31,7 @@ public class PlayerController : MonoBehaviour
         float mvX = Input.GetAxis("Horizontal") * Time.deltaTime * Speed;
         float mvZ = Input.GetAxis("Vertical") * Time.deltaTime * Speed;
 
-        if(mvX != 0 || mvZ != 0)
+        if (mvX != 0 || mvZ != 0)
         {
             // set trigger to run and play running audio
             if (isShooting)
@@ -50,7 +53,8 @@ public class PlayerController : MonoBehaviour
         }
 
         transform.Translate(mvX, 0, mvZ);
-
+        //rb.AddForce((transform.forward * mvZ + transform.right * mvX).normalized * Speed * 10f, ForceMode.Force);
+       
         //if (Input.GetKeyDown(KeyCode.Space))
         if (Input.GetMouseButtonDown(1))
         {
@@ -67,4 +71,14 @@ public class PlayerController : MonoBehaviour
             isJump = false;
         }
     }
+
+    private void OnCollisionEnter(Collision cls)
+    {
+        if (cls.gameObject.name == "level")
+        {
+            Debug.Log("Collision");
+            Destroy(gameObject);
+        }
+    }
+    
 }
