@@ -6,7 +6,7 @@ public class MovingPlatform : MonoBehaviour
 {
     [SerializeField] GameObject[] wayPoints;
     int currentWayPointIndex = 0;
-    [SerializeField] float speed = 1f;
+     float speed = 3f;
 
     // Update is called once per frame
     void Update()
@@ -19,6 +19,6 @@ public class MovingPlatform : MonoBehaviour
                 currentWayPointIndex = 0;
             }
         }
-        transform.position = Vector3.MoveTowards(transform.position, wayPoints[currentWayPointIndex].transform.position, speed * 5.0f * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, wayPoints[currentWayPointIndex].transform.position, speed * Time.deltaTime);
     }
 }

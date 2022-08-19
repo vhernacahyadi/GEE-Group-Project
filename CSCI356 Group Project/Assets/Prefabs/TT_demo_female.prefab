@@ -766,7 +766,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
-  jumpPower: 5
 --- !u!1 &6705007591927311326
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,6 +778,7 @@ GameObject:
   - component: {fileID: 6705007591927311313}
   - component: {fileID: 6705007591927311318}
   - component: {fileID: 6705007591927311317}
+  - component: {fileID: 6384679441547895548}
   m_Layer: 0
   m_Name: w_knife
   m_TagString: Untagged
@@ -865,6 +865,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300168, guid: fdfb5e1c4a1b339489c0eddebb1ab872, type: 3}
+--- !u!136 &6384679441547895548
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6705007591927311326}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.12
+  m_Height: 0.6
+  m_Direction: 2
+  m_Center: {x: -0.07, y: 0, z: 0.1}
 --- !u!1 &6705007591967339277
 GameObject:
   m_ObjectHideFlags: 0
