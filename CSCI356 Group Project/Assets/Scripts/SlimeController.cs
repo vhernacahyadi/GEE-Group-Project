@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlimeAI : MonoBehaviour
+public class SlimeController : MonoBehaviour
 {
     [SerializeField]
     private float health;
