@@ -8,6 +8,7 @@ TagManager:
   - Projectile
   - Target
   - Boundary
+  - platformCollider
   layers:
   - Default
   - TransparentFX
