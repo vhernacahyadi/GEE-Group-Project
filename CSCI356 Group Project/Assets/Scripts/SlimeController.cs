@@ -26,6 +26,7 @@ public class SlimeController : MonoBehaviour
     private float runSpeed;
 
     private Animator animator;
+    private GameManager gameManager;
     private GameObject player;
     private Rigidbody rb;
     private AudioSource audioSource;
@@ -37,6 +38,7 @@ public class SlimeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         player = GameObject.FindWithTag("Player");
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
@@ -65,7 +67,7 @@ public class SlimeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isJumping == false && animator.GetBool("Damaged") == false && animator.GetBool("Dying") == false)
+        if (isJumping == false && animator.GetBool("Damaged") == false && animator.GetBool("Dying") == false && player != null)
         {
             Vector3 playerToSlime = transform.position - player.transform.position;
             Vector3 playerToSpawnPt = spawnPos - player.transform.position;
@@ -136,18 +138,18 @@ public class SlimeController : MonoBehaviour
             isJumping = false;
         }
 
-        if (collision.collider.tag == "Projectile")
-        {
-            // Play jump sound
-            audioSource.Play();
+        //if (collision.collider.tag == "Projectile")
+        //{
+        //    // Play jump sound
+        //    audioSource.Play();
 
-            // Face the player
-            Vector3 vectorToPlayer = player.transform.position - transform.position;
-            vectorToPlayer.y = 0;
-            transform.rotation = Quaternion.LookRotation(vectorToPlayer);
+        //    // Face the player
+        //    Vector3 vectorToPlayer = player.transform.position - transform.position;
+        //    vectorToPlayer.y = 0;
+        //    transform.rotation = Quaternion.LookRotation(vectorToPlayer);
 
-            Damage();
-        }
+        //    Damage();
+        //}
 
         if (collision.collider.tag == "Boundary")
         {
@@ -182,7 +184,7 @@ public class SlimeController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Projectile" && animator.GetBool("Dying") == false)
+        if (other.tag == "Projectile" && animator.GetBool("Dying") == false && player !=null)
         {
             // Face the player
             Vector3 vectorToPlayer = player.transform.position - transform.position;
@@ -202,7 +204,6 @@ public class SlimeController : MonoBehaviour
         if (health == 0)
         {
             // Increment the score in the GameManager when the slime is damaged
-            GameManager gameManager = FindObjectOfType<GameManager>();
             if (gameManager != null)
             {
                 gameManager.AddScore(point);
