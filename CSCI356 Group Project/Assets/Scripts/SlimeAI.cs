@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class SlimeAI : MonoBehaviour
 {
-
     [SerializeField]
     private float health;
 
@@ -21,12 +20,17 @@ public class SlimeAI : MonoBehaviour
     [SerializeField]
     private float runSpeed;
 
-    private Vector3 spawnPos;
+    [SerializeField]
+    private float normalSpeed;
+
     private GameManager gameManager;
     private Animator animator;
     private GameObject player;
     private AudioSource audioSource;
     private NavMeshAgent agent;
+    private GameObject[] escapePoints;
+    private int currentEscapePoint;
+    private bool isRunning;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +38,12 @@ public class SlimeAI : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-        spawnPos = transform.position;
+        escapePoints = GameObject.FindGameObjectsWithTag("EscapePoint");
+        agent.acceleration = 1000.0f;
+        isRunning = false;
+
+        SetEscapeDest();
+        agent.SetDestination(escapePoints[currentEscapePoint].transform.position);
 
         // Audio
         audioSource = gameObject.AddComponent<AudioSource>();
@@ -55,73 +64,102 @@ public class SlimeAI : MonoBehaviour
         if (animator.GetBool("Damaged") == false && animator.GetBool("Dying") == false && player != null)
         {
             Vector3 playerToSlime = transform.position - player.transform.position;
-            Vector3 playerToSpawnPt = spawnPos - player.transform.position;
+            //Vector3 playerToSpawnPt = spawnPos - player.transform.position;
 
-            // If player detected within detectionRange, run
+            // If player detected, run to an escape point far away
             if (playerToSlime.magnitude < detectionRange)
             {
-                Vector3 dest = transform.position + playerToSlime;
-                agent.SetDestination(dest);
+                // If currently not running, find furthest escape point and set destination to it
+                if(!isRunning)
+                {
+                    agent.speed = runSpeed;
+                    SetEscapeDest();
+                    agent.SetDestination(escapePoints[currentEscapePoint].transform.position);
+                    isRunning = true;
+                }
+
+                // If currently running, only switch destination if current escape point is already reached
+                else if (isRunning && Vector3.Distance(transform.position, escapePoints[currentEscapePoint].transform.position) <= 3.0f)
+                {
+                    agent.speed = runSpeed;
+                    SetEscapeDest();
+                    agent.SetDestination(escapePoints[currentEscapePoint].transform.position);
+                }
             }
 
-            // If player is far from slime spawn point, go back to spawn point
-            else if (playerToSpawnPt.magnitude > detectionRange)
-            {
-                // Get random point around the spawn point
-                Vector3 randomPos = Random.insideUnitCircle;
-                randomPos = transform.position + randomPos;
-                agent.SetDestination(randomPos);
-            }
-
-            // Idle movement
+            // If player is far, patrol random escape point
             else
             {
-                // Do sth
+                isRunning = false;
+                agent.speed = normalSpeed;
+
+                if (Vector3.Distance(transform.position, escapePoints[currentEscapePoint].transform.position) <= 5.0f)
+                {
+                    currentEscapePoint = Random.Range(0, escapePoints.Length);
+                    agent.SetDestination(escapePoints[currentEscapePoint].transform.position);
+                }
             }
         }
     }
 
-    private void Run()
+    // Set currentEscapePoint to a new point
+    private void SetEscapeDest()
     {
-        //We will check if enemy can flee to the direction opposite from the player, we will check if there are obstacles
-        bool isDirSafe = false;
-
-        //We will need to rotate the direction away from the player if straight to the opposite of the player is a wall
-        float vRotation = 0;
-
-        while (!isDirSafe)
+        float bestDistance = 0;
+        int bestPoint = 0;
+        for (int i = 0; i < escapePoints.Length; i++)
         {
-            //Calculate the vector pointing from Player to the Enemy
-            Vector3 dirToPlayer = transform.position - player.transform.position;
+            Vector3 playerToEscapePoint = escapePoints[i].transform.position - player.transform.position;
+            float distance = playerToEscapePoint.magnitude;
 
-            //Calculate the vector from the Enemy to the direction away from the Player the new point
-            Vector3 newPos = transform.position + dirToPlayer;
-
-            //Rotate the direction of the Enemy to move
-            newPos = Quaternion.Euler(0, vRotation, 0) * newPos;
-
-            //Shoot a Raycast out to the new direction with 5f length (as example raycast length) and see if it hits an obstacle
-            bool isHit = Physics.Raycast(transform.position, newPos, out RaycastHit hit);
-
-            if (hit.transform == null)
+            // Do not pick the same point as current
+            if (distance > bestDistance && i != currentEscapePoint)
             {
-                //If the Raycast to the flee direction doesn't hit a wall then the Enemy is good to go to this direction
+                bestPoint = i;
+                bestDistance = distance;
+            }
+        }
+
+        currentEscapePoint = bestPoint;
+    }
+
+    private void MoveToSafeDirection()
+    {
+        bool isSafe = false;
+        Vector3 dir = transform.forward;
+        Vector3 newPos;
+        Vector3 safestPos = transform.position;
+
+        for (float rotation = 0; rotation < 360 && !isSafe; rotation += 10.0f)
+        {
+            dir = Quaternion.Euler(0, rotation, 0) * dir;
+            newPos = transform.position + dir * 5.0f;
+
+            // Shoot a Raycast out to the new direction, check if it hits something
+            bool isHit = Physics.Raycast(transform.position, dir, out RaycastHit hit, 100.0f);
+
+            // If the Raycast to the flee direction doesn't hit then the slime is good to go to this direction
+            if (!isHit)
+            {
+                transform.Rotate(0, rotation, 0);
                 agent.SetDestination(newPos);
-                isDirSafe = true;
+                isSafe = true;
             }
 
-            //Change the direction of fleeing is it hits a wall by 20 degrees
-            if (isHit && hit.transform.CompareTag("Boundary"))
+            // Otherwise, check for max distance
+            else if (Vector3.Distance(transform.position, hit.transform.position) > Vector3.Distance(transform.position, safestPos))
             {
-                vRotation += 20;
-                isDirSafe = false;
+                safestPos = hit.transform.position;
             }
-            else
-            {
-                //If the Raycast to the flee direction doesn't hit a wall then the Enemy is good to go to this direction
-                agent.SetDestination(newPos);
-                isDirSafe = true;
-            }
+
+        }
+
+        // If cannot find a safe direction, go to direction with farthest obstacle
+        if (!isSafe)
+        {
+            safestPos.y = 0;
+            transform.LookAt(safestPos);
+            agent.SetDestination(safestPos);
         }
     }
 
