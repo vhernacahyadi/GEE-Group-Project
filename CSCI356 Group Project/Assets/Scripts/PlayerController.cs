@@ -72,13 +72,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision cls)
-    {
-        if (cls.gameObject.name == "level")
-        {
-            Debug.Log("Collision");
-            Destroy(gameObject);
-        }
-    }
+
     
 }

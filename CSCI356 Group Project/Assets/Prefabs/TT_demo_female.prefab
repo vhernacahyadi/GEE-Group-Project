@@ -659,6 +659,7 @@ GameObject:
   - component: {fileID: 6705007591927311323}
   - component: {fileID: 6705007591927311321}
   - component: {fileID: 6705007591927311320}
+  - component: {fileID: 6638755821376284776}
   m_Layer: 0
   m_Name: TT_demo_female
   m_TagString: Player
@@ -766,6 +767,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
+  orientation: {fileID: 0}
+--- !u!114 &6638755821376284776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6705007591927311324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa15bd38e103f64f8109e7b3f2cbf87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverCamera: {fileID: 8438521810966687973, guid: d1417952b3912c54daae14f2c19432a7, type: 3}
+  gameOverUI: {fileID: 5153908184985331900, guid: 30fbb4e6a169c5f4d8947159745251d1, type: 3}
 --- !u!1 &6705007591927311326
 GameObject:
   m_ObjectHideFlags: 0
