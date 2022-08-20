@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BulletAmount : MonoBehaviour
+public class BulletSlimeAmount : MonoBehaviour
 {
     public GameObject player;
-    public Text scoreText;
+    public Text bulletText;
+    public Text slimeText;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,7 @@ public class BulletAmount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text ="Bullet Left:" + GameManager.bulletAmount.ToString();
+        bulletText.text ="Bullet Left:" +"\n"+ GameManager.bulletAmount.ToString();
+        slimeText.text = "Slime left:" + "\n" + GameManager.maxSpawn.ToString();
     }
 }

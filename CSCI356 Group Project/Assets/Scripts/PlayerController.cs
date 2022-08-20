@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //transform.Translate(mvX, 0, mvZ);
-        rb.AddForce((transform.forward * mvZ + transform.right * mvX).normalized * Speed * 10f, ForceMode.Force);
+        rb.AddForce((transform.forward * mvZ + transform.right * mvX).normalized * Speed * 20, ForceMode.Force);
        
         //if (Input.GetKeyDown(KeyCode.Space))
         if (Input.GetMouseButtonDown(1))

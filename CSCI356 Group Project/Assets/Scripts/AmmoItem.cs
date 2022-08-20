@@ -5,11 +5,14 @@ using UnityEngine.UI;
 public class AmmoItem : MonoBehaviour
 {
     private GameObject player;
-    public Text scoreText;
+    [SerializeField] private AudioClip gunReloadClip;
+     private AudioSource reloadSource;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        reloadSource = GetComponent<AudioSource>();
+        reloadSource.clip = gunReloadClip;
     }
 
     // Update is called once per frame
@@ -22,32 +25,13 @@ public class AmmoItem : MonoBehaviour
             Debug.Log(direction.magnitude);
             if (direction.magnitude < 1)
             {
-                Debug.Log("Player near ammo");
-                Debug.Log(GameManager.bulletAmount);
-
-                 GameManager.bulletAmount += 6;
-                 Debug.Log("gunShooter.bullet amount left" + GameManager.bulletAmount);
-                  Destroy(gameObject);
+                GameManager.bulletAmount += 6;
+                //gunAudio.PlayOneShot(gunReloadClip);
+                reloadSource.Play();
+                Debug.Log("bullet amount left" + GameManager.bulletAmount);
+                Destroy(gameObject);
 
             }
         }
     }
-    //private void OnCollisionEnter(Collision cls)
-    //{
-    //    Debug.Log("OnCollisionEnter");
-    //    if (cls.gameObject.tag.Equals("Player"))
-    //    {
-    //        Debug.Log("Player OnCollisionEnter");
-
-    //        if (TryGetComponent(out gunShooter gunShooter))
-    //        {
-    //            Debug.Log(gunShooter.bulletAmount);
-
-    //            gunShooter.bulletAmount += 6;
-    //            Debug.Log("gunShooter.bulletAmount after" + gunShooter.bulletAmount);
-    //            Destroy(gameObject);
-    //        }
-    //    }
-    //}
-
 }
