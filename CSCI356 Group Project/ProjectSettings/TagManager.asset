@@ -9,6 +9,7 @@ TagManager:
   - Target
   - Boundary
   - platformCollider
+  - EscapePoint
   layers:
   - Default
   - TransparentFX
