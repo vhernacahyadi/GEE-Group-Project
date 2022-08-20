@@ -9,7 +9,7 @@ public class gunShooter : MonoBehaviour
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private float bulletForce = 10f;
     [SerializeField] private AudioClip gunShootClip;
-    [SerializeField] public int bulletAmount=20;
+
     private RaycastHit hitInfo;
     private AudioSource gunAudio;
     GameObject player;
@@ -25,7 +25,7 @@ public class gunShooter : MonoBehaviour
     {
         const int damage = 1;
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1")&& GameManager.bulletAmount>0)
         {
             Vector3 directionOfFire = playerCamera.transform.forward;
 
@@ -39,8 +39,8 @@ public class gunShooter : MonoBehaviour
             gunAudio.PlayOneShot(gunShootClip);
             GameObject newBulletPrefab = GameObject.Instantiate(bulletPrefab, spawnPoint.transform.position, Quaternion.identity);
             newBulletPrefab.GetComponent<Rigidbody>().AddForce(directionOfFire * bulletForce, ForceMode.Impulse);
-           // bulletAmount-=1;
-            Debug.Log("bulletAmount after:"+ bulletAmount);
+            GameManager.bulletAmount -= 1;
+           Debug.Log("bullet left:"+ GameManager.bulletAmount);
 
         }
     }
