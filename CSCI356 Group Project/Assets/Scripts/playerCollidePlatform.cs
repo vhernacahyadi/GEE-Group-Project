@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class playerCollidePlatform : MonoBehaviour
 {
-    [SerializeField] GameObject gameOverCamera;
-    [SerializeField] GameObject gameOverUI;
-    // Start is called before the first frame update
-    void Start()
+	private GameObject player;
+	[SerializeField] GameObject gameOverCamera;
+	[SerializeField] GameObject gameOverUI;
+	// Start is called before the first frame update
+	void Start()
     {
+		player = GameObject.FindWithTag("Player");
+
 	}
 
-    private void OnCollisionEnter(Collision cls)
-    {
-        if (cls.gameObject.name == "level")
-        {
-            Debug.Log("Collision");
-            gameOverCamera.SetActive(true);
-            gameOverUI.SetActive(true);
-            Destroy(gameObject);
-        }
-    }
+
+    void OnCollisionStay(Collision cls)
+	{
+		if (cls.gameObject.name == "level")
+		{
+			Debug.Log ("Collision");
+			gameOverCamera.SetActive(true);
+			gameOverUI.SetActive(true);
+			Destroy(gameObject);
+		}
+	}
 }

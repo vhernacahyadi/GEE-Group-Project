@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private bool isShooting = true;
     private bool isJump;
     private Rigidbody rb;
-    public Transform orientation;
+
 
     // Start is called before the first frame update
     void Start()
@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //transform.Translate(mvX, 0, mvZ);
-        rb.AddForce((transform.forward * mvZ + transform.right * mvX).normalized * Speed * 10f, ForceMode.Force);
+        rb.AddForce((transform.forward * mvZ + transform.right * mvX).normalized * Speed * 20, ForceMode.Force);
        
         //if (Input.GetKeyDown(KeyCode.Space))
         if (Input.GetMouseButtonDown(1))
@@ -70,8 +70,5 @@ public class PlayerController : MonoBehaviour
             transform.GetComponent<Rigidbody>().AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
             isJump = false;
         }
-    }
-
-
-    
+    }  
 }
