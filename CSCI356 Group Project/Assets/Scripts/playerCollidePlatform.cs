@@ -5,6 +5,8 @@ using UnityEngine;
 public class playerCollidePlatform : MonoBehaviour
 {
 	private GameObject player;
+	[SerializeField] GameObject gameOverCamera;
+	[SerializeField] GameObject gameOverUI;
 	// Start is called before the first frame update
 	void Start()
     {
@@ -18,6 +20,8 @@ public class playerCollidePlatform : MonoBehaviour
 		if (cls.gameObject.name == "level")
 		{
 			Debug.Log ("Collision");
+			gameOverCamera.SetActive(true);
+			gameOverUI.SetActive(true);
 			Destroy(gameObject);
 		}
 	}
