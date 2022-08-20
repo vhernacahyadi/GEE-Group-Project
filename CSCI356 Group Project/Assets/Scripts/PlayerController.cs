@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private bool isShooting = true;
     private bool isJump;
     private Rigidbody rb;
-    public Transform orientation;
+
 
     // Start is called before the first frame update
     void Start()
@@ -70,15 +70,5 @@ public class PlayerController : MonoBehaviour
             transform.GetComponent<Rigidbody>().AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
             isJump = false;
         }
-    }
-
-    private void OnCollisionEnter(Collision cls)
-    {
-        if (cls.gameObject.name == "level")
-        {
-            Debug.Log("Collision");
-            Destroy(gameObject);
-        }
-    }
-    
+    }  
 }
