@@ -9,7 +9,7 @@ public class gunShooter : MonoBehaviour
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private float bulletForce = 10f;
     [SerializeField] private AudioClip gunShootClip;
-
+    [SerializeField] public int bulletAmount=20;
     private RaycastHit hitInfo;
     private AudioSource gunAudio;
     GameObject player;
@@ -33,12 +33,15 @@ public class gunShooter : MonoBehaviour
             {
                 //target damage calculations goes here
             }
+           // Debug.Log("bulletAmount b4:" + bulletAmount);
 
             //Spawn bullet
             gunAudio.PlayOneShot(gunShootClip);
             GameObject newBulletPrefab = GameObject.Instantiate(bulletPrefab, spawnPoint.transform.position, Quaternion.identity);
             newBulletPrefab.GetComponent<Rigidbody>().AddForce(directionOfFire * bulletForce, ForceMode.Impulse);
-           
+           // bulletAmount-=1;
+            Debug.Log("bulletAmount after:"+ bulletAmount);
+
         }
     }
 
