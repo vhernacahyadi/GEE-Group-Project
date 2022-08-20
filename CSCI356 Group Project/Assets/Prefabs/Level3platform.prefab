@@ -396,7 +396,7 @@ Transform:
   m_GameObject: {fileID: 3075919769337176740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.3, z: 1}
+  m_LocalScale: {x: 1.5, y: 0.3, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3075919769459379685}
@@ -587,7 +587,7 @@ Transform:
   m_GameObject: {fileID: 3075919769805907501}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.3, z: 1}
+  m_LocalScale: {x: 1.5, y: 0.3, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3075919769122769260}
@@ -775,7 +775,7 @@ Transform:
   m_GameObject: {fileID: 3075919770081504161}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.3, z: 1}
+  m_LocalScale: {x: 1.5, y: 0.3, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3075919768877057248}
@@ -901,7 +901,7 @@ Transform:
   m_GameObject: {fileID: 3075919770380940125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.3, z: 1}
+  m_LocalScale: {x: 1.5, y: 0.3, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3075919768648408092}
@@ -1025,7 +1025,7 @@ Transform:
   m_GameObject: {fileID: 7824165648809091716}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -2.2600002, y: 1.419, z: 0}
-  m_LocalScale: {x: 2, y: 0.29999998, z: 2}
+  m_LocalScale: {x: 1.5, y: 0.3, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1278043738420577312}
@@ -1220,7 +1220,7 @@ Transform:
   m_GameObject: {fileID: 7824165649816060064}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.3, z: 1}
+  m_LocalScale: {x: 1.5, y: 0.3, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7824165649425526753}

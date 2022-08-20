@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 3958069667185916669}
   - component: {fileID: 3958069667185916670}
   m_Layer: 0
-  m_Name: Platform
+  m_Name: startPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +124,7 @@ Transform:
   m_GameObject: {fileID: 3958069667185916671}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -2.2600002, y: 1.419, z: 0}
-  m_LocalScale: {x: 2, y: 0.29999998, z: 2}
+  m_LocalScale: {x: 1.5, y: 0.3, z: 1.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5459594553955818587}
@@ -223,7 +223,7 @@ Transform:
   m_GameObject: {fileID: 3958069667789052123}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.3, z: 1}
+  m_LocalScale: {x: 1.5, y: 0.3, z: 1.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3958069666569222042}
@@ -307,6 +307,7 @@ MonoBehaviour:
   wayPoints:
   - {fileID: 3958069666232911161}
   - {fileID: 3958069666387019057}
+  speed: 3
 --- !u!114 &3958069667789052115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,7 +333,7 @@ GameObject:
   - component: {fileID: 3958069667991284848}
   - component: {fileID: 3958069667991284849}
   m_Layer: 0
-  m_Name: Platform (1)
+  m_Name: staticPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -347,7 +348,7 @@ Transform:
   m_GameObject: {fileID: 3958069667991284850}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 3.83, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.29999998, z: 1}
+  m_LocalScale: {x: 1.5, y: 0.3, z: 1.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5459594553955818587}
@@ -550,7 +551,7 @@ Transform:
   m_GameObject: {fileID: 8131032435735968479}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.3, z: 1}
+  m_LocalScale: {x: 1.5, y: 0.3, z: 1.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8131032437224592798}
@@ -634,6 +635,7 @@ MonoBehaviour:
   wayPoints:
   - {fileID: 8131032437290952509}
   - {fileID: 8131032437407311669}
+  speed: 3
 --- !u!114 &8131032435735968471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -898,8 +900,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8131032436596683738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.3, z: 1}
+  m_LocalPosition: {x: 0.14, y: 0, z: 0.38}
+  m_LocalScale: {x: 1.5, y: 0.3, z: 1.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8131032436190338203}
@@ -983,6 +985,7 @@ MonoBehaviour:
   wayPoints:
   - {fileID: 8131032436123987512}
   - {fileID: 8131032436007628336}
+  speed: 3
 --- !u!114 &8131032436596683730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1025,7 +1028,7 @@ Transform:
   m_GameObject: {fileID: 8131032436904635174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.3, z: 1}
+  m_LocalScale: {x: 1.5, y: 0.3, z: 1.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8131032435953157223}
@@ -1109,6 +1112,7 @@ MonoBehaviour:
   wayPoints:
   - {fileID: 8131032436424210116}
   - {fileID: 8131032436303656652}
+  speed: 3
 --- !u!114 &8131032436904635182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1247,7 +1251,7 @@ Transform:
   m_GameObject: {fileID: 8131032437412658774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.3, z: 1}
+  m_LocalScale: {x: 1.5, y: 0.3, z: 1.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8131032435411587351}
@@ -1331,6 +1335,7 @@ MonoBehaviour:
   wayPoints:
   - {fileID: 8131032435882697652}
   - {fileID: 8131032435728524220}
+  speed: 3
 --- !u!114 &8131032437412658782
 MonoBehaviour:
   m_ObjectHideFlags: 0
