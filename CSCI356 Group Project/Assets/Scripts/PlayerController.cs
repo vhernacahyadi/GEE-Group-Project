@@ -67,8 +67,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(isGrounded);
-        if(Physics.OverlapSphere(GroundTester.position, 0.1f, playerMask).Length == 0)
+        if(Physics.OverlapSphere(GroundTester.position, 0.5f, playerMask).Length == 0)
         {
             isGrounded = false;
             return;
