@@ -29,7 +29,6 @@ public class SlimeAI : MonoBehaviour
     private AudioSource audioSource;
     private NavMeshAgent agent;
     private GameObject[] escapePoints;
-    private int currentEscapePoint;
     private bool isRunning;
 
     // Start is called before the first frame update
@@ -42,13 +41,15 @@ public class SlimeAI : MonoBehaviour
         agent.acceleration = 1000.0f;
         isRunning = false;
 
-        if(escapePoints.Length == 0)
+        if (escapePoints.Length == 0)
         {
             Debug.LogError("No escape points found in scene.");
         }
 
         SetEscapeDest();
-        agent.SetDestination(escapePoints[currentEscapePoint].transform.position);
+
+        // Randomly move to random direction
+        StartCoroutine(RandomDirection());
 
         // Audio
         audioSource = gameObject.AddComponent<AudioSource>();
@@ -75,33 +76,31 @@ public class SlimeAI : MonoBehaviour
             if (playerToSlime.magnitude < detectionRange)
             {
                 // If currently not running, find furthest escape point and set destination to it
-                if(!isRunning)
+                if (!isRunning)
                 {
                     agent.speed = runSpeed;
                     SetEscapeDest();
-                    agent.SetDestination(escapePoints[currentEscapePoint].transform.position);
+
                     isRunning = true;
                 }
 
                 // If currently running, switch destination if current escape point is already reached
-                else if (isRunning && (Vector3.Distance(transform.position, escapePoints[currentEscapePoint].transform.position) <= 3.0f))
+                else if (isRunning && (Vector3.Distance(transform.position, agent.destination) <= 3.0f))
                 {
                     agent.speed = runSpeed;
                     SetEscapeDest();
-                    agent.SetDestination(escapePoints[currentEscapePoint].transform.position);
                 }
-            }
 
-            // If player is far, patrol random escape point
+            }
+            // If player is far, go to random escape point
             else
             {
                 isRunning = false;
                 agent.speed = normalSpeed;
 
-                if (Vector3.Distance(transform.position, escapePoints[currentEscapePoint].transform.position) <= 5.0f)
+                if (Vector3.Distance(transform.position, agent.destination) <= 3.0f)
                 {
-                    currentEscapePoint = Random.Range(0, escapePoints.Length);
-                    agent.SetDestination(escapePoints[currentEscapePoint].transform.position);
+                    agent.SetDestination(escapePoints[Random.Range(0, escapePoints.Length)].transform.position);
                 }
             }
         }
@@ -112,20 +111,53 @@ public class SlimeAI : MonoBehaviour
     {
         float bestDistance = 0;
         int bestPoint = 0;
+
+        // Loop through escape points and pick farthest
         for (int i = 0; i < escapePoints.Length; i++)
         {
             Vector3 playerToEscapePoint = escapePoints[i].transform.position - player.transform.position;
             float distance = playerToEscapePoint.magnitude;
 
             // Do not pick the same point as current
-            if (distance > bestDistance && i != currentEscapePoint)
+            if (distance > bestDistance && escapePoints[i].transform.position != agent.destination)
             {
                 bestPoint = i;
                 bestDistance = distance;
             }
         }
 
-        currentEscapePoint = bestPoint;
+        agent.SetDestination(escapePoints[bestPoint].transform.position);
+    }
+
+    // Randomly steer to random point
+    private IEnumerator RandomDirection()
+    {
+        bool isOffCourse = false;
+        Vector3 currentEscapePoint = agent.destination;
+
+        while (true)
+        { 
+            if (!isOffCourse)
+            {
+                // Store the correct destination
+                currentEscapePoint = agent.destination;
+
+                // Set random
+                transform.Rotate(0, Random.Range(-90, 90), 0);
+                agent.SetDestination(transform.position + transform.forward * 6.0f);
+
+                isOffCourse = true;
+            }
+            else
+            {
+                // Set to proper destination
+                agent.SetDestination(currentEscapePoint);
+
+                isOffCourse= false;
+            }
+
+            yield return new WaitForSeconds(Random.Range(3.0f, 6.0f));
+        }
     }
 
     private void OnTriggerEnter(Collider other)

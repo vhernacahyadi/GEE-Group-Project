@@ -1408,7 +1408,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490168168}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.87}
+  m_LocalPosition: {x: 0, y: 0, z: -3.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1427,12 +1427,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c511db6d022a3c44cbb63a16524a858c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPrefab: {fileID: 1028780907410657347, guid: 35b2c73f27373044e8eaed52d1f43351, type: 3}
+  spawnPrefab: {fileID: 6181021869800084321, guid: 9789059f7ce29bf4fb821934265e18c7, type: 3}
   startDelay: 1
   interval: 2
   spawnRadius: 7
   spawnHeight: 0.5
-  maxSpawn: 2
+  maxSpawn: 5
 --- !u!1 &1619073362
 GameObject:
   m_ObjectHideFlags: 0
