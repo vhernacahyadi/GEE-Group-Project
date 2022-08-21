@@ -29,6 +29,7 @@ public class SlimeAI : MonoBehaviour
     private AudioSource audioSource;
     private NavMeshAgent agent;
     private GameObject[] escapePoints;
+    private Vector3 currentEscapePoint;
     private bool isRunning;
 
     // Start is called before the first frame update
@@ -84,8 +85,8 @@ public class SlimeAI : MonoBehaviour
                     isRunning = true;
                 }
 
-                // If currently running, switch destination if current escape point is already reached
-                else if (isRunning && (Vector3.Distance(transform.position, agent.destination) <= 3.0f))
+                // If currently running, switch destination if current destination is already reached
+                else if (isRunning && (Vector3.Distance(transform.position, currentEscapePoint) <= 5.0f))
                 {
                     agent.speed = runSpeed;
                     SetEscapeDest();
@@ -98,9 +99,11 @@ public class SlimeAI : MonoBehaviour
                 isRunning = false;
                 agent.speed = normalSpeed;
 
-                if (Vector3.Distance(transform.position, agent.destination) <= 3.0f)
+                // Change escape point if already reached
+                if (Vector3.Distance(transform.position, currentEscapePoint) <= 5.0f)
                 {
-                    agent.SetDestination(escapePoints[Random.Range(0, escapePoints.Length)].transform.position);
+                    currentEscapePoint = escapePoints[Random.Range(0, escapePoints.Length)].transform.position;
+                    agent.SetDestination(currentEscapePoint);
                 }
             }
         }
@@ -127,24 +130,21 @@ public class SlimeAI : MonoBehaviour
         }
 
         agent.SetDestination(escapePoints[bestPoint].transform.position);
+        currentEscapePoint = agent.destination;
     }
 
     // Randomly steer to random point
     private IEnumerator RandomDirection()
     {
         bool isOffCourse = false;
-        Vector3 currentEscapePoint = agent.destination;
-
+        
         while (true)
         { 
             if (!isOffCourse)
             {
-                // Store the correct destination
-                currentEscapePoint = agent.destination;
-
                 // Set random
-                transform.Rotate(0, Random.Range(-90, 90), 0);
-                agent.SetDestination(transform.position + transform.forward * 6.0f);
+                transform.Rotate(0, Random.Range(-60, 60), 0);
+                agent.SetDestination(transform.position + transform.forward * 10.0f);
 
                 isOffCourse = true;
             }
@@ -156,7 +156,10 @@ public class SlimeAI : MonoBehaviour
                 isOffCourse= false;
             }
 
-            yield return new WaitForSeconds(Random.Range(1.0f, 5.0f));
+            if(isRunning)
+                yield return new WaitForSeconds(Random.Range(0.5f, 2.0f));
+            else
+                yield return new WaitForSeconds(3);
         }
     }
 
