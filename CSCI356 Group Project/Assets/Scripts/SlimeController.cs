@@ -133,26 +133,17 @@ public class SlimeController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //if (collision.collider.tag == "Projectile")
-        //{
-        //    // Play jump sound
-        //    audioSource.Play();
-
-        //    // Face the player
-        //    Vector3 vectorToPlayer = player.transform.position - transform.position;
-        //    vectorToPlayer.y = 0;
-        //    transform.rotation = Quaternion.LookRotation(vectorToPlayer);
-
-        //    Damage();
-        //}
-
-        if (!isJumping && collision.collider.CompareTag("Boundary"))
+        if (isJumping && collision.collider.CompareTag("Boundary"))
         {
+            // Play jump sound
+            audioSource.Play();
+
             // Turn around
-            transform.Rotate(0, Random.Range(90, 270), 0, Space.Self);
+            transform.Rotate(0, 180, 0, Space.Self);
+            transform.Rotate(0, Random.Range(-90, 90), 0, Space.Self); // add some randomness
 
             Vector3 jump = transform.forward.normalized * runSpeed;
-            jump.y = upForce;
+            jump.y = 0;
             rb.AddForce(jump, ForceMode.Impulse);
 
             isJumping = true;
@@ -171,7 +162,8 @@ public class SlimeController : MonoBehaviour
             audioSource.Play();
 
             // Turn around
-            transform.Rotate(0, Random.Range(90, 270), 0, Space.Self);
+            transform.Rotate(0, 180, 0, Space.Self);
+            transform.Rotate(0, Random.Range(-90, 90), 0, Space.Self); // add some randomness
 
             Vector3 jump = transform.forward.normalized * runSpeed;
             jump.y = upForce;
