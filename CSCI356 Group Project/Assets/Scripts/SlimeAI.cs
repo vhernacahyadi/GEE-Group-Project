@@ -83,8 +83,8 @@ public class SlimeAI : MonoBehaviour
                     isRunning = true;
                 }
 
-                // If currently running, only switch destination if current escape point is already reached
-                else if (isRunning && Vector3.Distance(transform.position, escapePoints[currentEscapePoint].transform.position) <= 3.0f)
+                // If currently running, switch destination if current escape point is already reached
+                else if (isRunning && (Vector3.Distance(transform.position, escapePoints[currentEscapePoint].transform.position) <= 3.0f))
                 {
                     agent.speed = runSpeed;
                     SetEscapeDest();
@@ -126,46 +126,6 @@ public class SlimeAI : MonoBehaviour
         }
 
         currentEscapePoint = bestPoint;
-    }
-
-    private void MoveToSafeDirection()
-    {
-        bool isSafe = false;
-        Vector3 dir = transform.forward;
-        Vector3 newPos;
-        Vector3 safestPos = transform.position;
-
-        for (float rotation = 0; rotation < 360 && !isSafe; rotation += 10.0f)
-        {
-            dir = Quaternion.Euler(0, rotation, 0) * dir;
-            newPos = transform.position + dir * 5.0f;
-
-            // Shoot a Raycast out to the new direction, check if it hits something
-            bool isHit = Physics.Raycast(transform.position, dir, out RaycastHit hit, 100.0f);
-
-            // If the Raycast to the flee direction doesn't hit then the slime is good to go to this direction
-            if (!isHit)
-            {
-                transform.Rotate(0, rotation, 0);
-                agent.SetDestination(newPos);
-                isSafe = true;
-            }
-
-            // Otherwise, check for max distance
-            else if (Vector3.Distance(transform.position, hit.transform.position) > Vector3.Distance(transform.position, safestPos))
-            {
-                safestPos = hit.transform.position;
-            }
-
-        }
-
-        // If cannot find a safe direction, go to direction with farthest obstacle
-        if (!isSafe)
-        {
-            safestPos.y = 0;
-            transform.LookAt(safestPos);
-            agent.SetDestination(safestPos);
-        }
     }
 
     private void OnTriggerEnter(Collider other)

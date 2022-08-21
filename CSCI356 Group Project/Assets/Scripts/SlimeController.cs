@@ -146,7 +146,7 @@ public class SlimeController : MonoBehaviour
         //    Damage();
         //}
 
-        if (collision.collider.tag == "Boundary")
+        if (!isJumping && collision.collider.CompareTag("Boundary"))
         {
             // Turn around
             transform.Rotate(0, Random.Range(90, 270), 0, Space.Self);
@@ -157,7 +157,7 @@ public class SlimeController : MonoBehaviour
 
             isJumping = true;
         }
-        else if(isJumping)
+        else
         {
             isJumping = false;
         }
@@ -165,20 +165,20 @@ public class SlimeController : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        //if (collision.collider.tag == "Boundary")
-        //{
-        //    // Play jump sound
-        //    audioSource.Play();
+        if (!isJumping && collision.collider.tag == "Boundary")
+        {
+            // Play jump sound
+            audioSource.Play();
 
-        //    // Turn around
-        //    transform.Rotate(0, Random.Range(90, 270), 0, Space.Self);
+            // Turn around
+            transform.Rotate(0, Random.Range(90, 270), 0, Space.Self);
 
-        //    Vector3 jump = transform.forward.normalized * runSpeed;
-        //    jump.y = upForce;
-        //    rb.AddForce(jump, ForceMode.Impulse);
+            Vector3 jump = transform.forward.normalized * runSpeed;
+            jump.y = upForce;
+            rb.AddForce(jump, ForceMode.Impulse);
 
-        //    isJumping = true;
-        //}
+            isJumping = true;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
