@@ -156,7 +156,7 @@ public class SlimeAI : MonoBehaviour
                 isOffCourse= false;
             }
 
-            yield return new WaitForSeconds(Random.Range(3.0f, 6.0f));
+            yield return new WaitForSeconds(Random.Range(1.0f, 5.0f));
         }
     }
 
