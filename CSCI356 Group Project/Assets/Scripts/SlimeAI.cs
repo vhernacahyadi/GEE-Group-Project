@@ -42,6 +42,11 @@ public class SlimeAI : MonoBehaviour
         agent.acceleration = 1000.0f;
         isRunning = false;
 
+        if(escapePoints.Length == 0)
+        {
+            Debug.LogError("No escape points found in scene.");
+        }
+
         SetEscapeDest();
         agent.SetDestination(escapePoints[currentEscapePoint].transform.position);
 
