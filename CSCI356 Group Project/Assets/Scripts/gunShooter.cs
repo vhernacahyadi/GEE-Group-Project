@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunShooter : MonoBehaviour
+public class gunShooter : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Camera playerCamera;
@@ -25,7 +25,7 @@ public class GunShooter : MonoBehaviour
     {
         const int damage = 1;
 
-        if (Input.GetButtonDown("Fire1")&& GameManager.bulletAmount>0)
+        if (Input.GetButtonDown("Fire1") && GameManager.bulletAmount>0)
         {
             Vector3 directionOfFire = playerCamera.transform.forward;
 
