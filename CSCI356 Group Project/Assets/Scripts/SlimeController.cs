@@ -162,7 +162,7 @@ public class SlimeController : MonoBehaviour
             audioSource.Play();
 
             // Turn around
-            transform.Rotate(0, 180, 0, Space.Self);
+            transform.LookAt(collision.contacts[0].normal);
             transform.Rotate(0, Random.Range(-90, 90), 0, Space.Self); // add some randomness
 
             Vector3 jump = transform.forward.normalized * runSpeed;

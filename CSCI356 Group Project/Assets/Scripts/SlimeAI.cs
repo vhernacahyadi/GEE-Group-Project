@@ -136,9 +136,7 @@ public class SlimeAI : MonoBehaviour
         Vector3 currentEscapePoint = agent.destination;
 
         while (true)
-        {
-            Debug.Log($"Is off course {isOffCourse}");
-
+        { 
             if (!isOffCourse)
             {
                 // Store the correct destination
