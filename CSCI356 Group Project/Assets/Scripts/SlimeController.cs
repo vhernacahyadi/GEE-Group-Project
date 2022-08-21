@@ -133,11 +133,6 @@ public class SlimeController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (isJumping && collision.collider.tag == "Ground")
-        {
-            isJumping = false;
-        }
-
         //if (collision.collider.tag == "Projectile")
         //{
         //    // Play jump sound
@@ -161,6 +156,10 @@ public class SlimeController : MonoBehaviour
             rb.AddForce(jump, ForceMode.Impulse);
 
             isJumping = true;
+        }
+        else if(isJumping)
+        {
+            isJumping = false;
         }
     }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerCollidePlatform : MonoBehaviour
+public class PlayerCollidePlatform : MonoBehaviour
 {
 	private GameObject player;
 	[SerializeField] GameObject gameOverCamera;
