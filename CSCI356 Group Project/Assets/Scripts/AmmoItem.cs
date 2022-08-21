@@ -11,8 +11,8 @@ public class AmmoItem : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        reloadSource = GetComponent<AudioSource>();
-        reloadSource.clip = gunReloadClip;
+        //reloadSource = GetComponent<AudioSource>();
+        //reloadSource.clip = gunReloadClip;
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class AmmoItem : MonoBehaviour
             {
                 GameManager.bulletAmount += 6;
                 //gunAudio.PlayOneShot(gunReloadClip);
-                reloadSource.Play();
+                //reloadSource.Play();
                 Debug.Log("bullet amount left" + GameManager.bulletAmount);
                 Destroy(gameObject);
 
