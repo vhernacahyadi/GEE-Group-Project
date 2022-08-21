@@ -8,12 +8,15 @@ public class PlayerController : MonoBehaviour
     //[SerializeField] private const float RotateSpeed = 20.0f;
 
     [SerializeField] private float Speed = 5.0f;
-    //[SerializeField] private float jumpPower = 5;
-    float jumpPower = 3;
+    [SerializeField] private float jumpPower = 5;
+    [SerializeField] private Transform GroundTester;
+    [SerializeField] private LayerMask playerMask;
+   
     private Animator playerAnimator;
     private AudioSource playerAudio;
     private bool isShooting = true;
-    private bool isJump;
+    private bool isGrounded = true;
+    private bool isJump = false;
     private Rigidbody rb;
 
 
@@ -52,11 +55,11 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        //transform.Translate(mvX, 0, mvZ);
-        rb.AddForce((transform.forward * mvZ + transform.right * mvX).normalized * Speed * 20, ForceMode.Force);
+        transform.Translate(mvX, 0, mvZ);
+        //rb.AddForce((transform.forward * mvZ + transform.right * mvX).normalized * Speed * 20, ForceMode.Force);
        
         //if (Input.GetKeyDown(KeyCode.Space))
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && isGrounded)
         {
             isJump = true;
         }
@@ -64,11 +67,24 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Debug.Log(isGrounded);
+        if(Physics.OverlapSphere(GroundTester.position, 0.1f, playerMask).Length == 0)
+        {
+            isGrounded = false;
+            return;
+        }
+        else
+        {
+            isGrounded = true;
+        }
+
         // make player jump
         if (isJump)
         {
             transform.GetComponent<Rigidbody>().AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
             isJump = false;
         }
-    }  
+    }
+
+    
 }

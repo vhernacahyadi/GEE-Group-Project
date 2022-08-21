@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunShooter : MonoBehaviour
+public class gunShooter : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Camera playerCamera;
@@ -25,7 +25,7 @@ public class GunShooter : MonoBehaviour
     {
         const int damage = 1;
 
-        if (Input.GetButtonDown("Fire1")&& GameManager.bulletAmount>0)
+        if (Input.GetButtonDown("Fire1") && GameManager.bulletAmount>0)
         {
             Vector3 directionOfFire = playerCamera.transform.forward;
 
@@ -33,14 +33,12 @@ public class GunShooter : MonoBehaviour
             {
                 //target damage calculations goes here
             }
-           // Debug.Log("bulletAmount b4:" + bulletAmount);
+           
 
             //Spawn bullet
             gunAudio.PlayOneShot(gunShootClip);
             GameObject newBulletPrefab = GameObject.Instantiate(bulletPrefab, spawnPoint.transform.position, Quaternion.identity);
             newBulletPrefab.GetComponent<Rigidbody>().AddForce(directionOfFire * bulletForce, ForceMode.Impulse);
-            GameManager.bulletAmount -= 1;
-           Debug.Log("bullet left:"+ GameManager.bulletAmount);
 
         }
     }
