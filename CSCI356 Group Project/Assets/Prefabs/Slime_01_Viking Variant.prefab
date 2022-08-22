@@ -153,6 +153,8 @@ MonoBehaviour:
   health: 3
   point: 5
   damageSound: {fileID: 8300000, guid: 5a7bed11ed53fa54587edca886c73a56, type: 3}
-  detectionRange: 20
-  runSpeed: 8
-  normalSpeed: 2
+  detectionRange: 15
+  runSpeed: 10
+  normalSpeed: 3
+  offCourseInterval: 0.1
+  onCourseInterval: 1.5

@@ -6,22 +6,28 @@ using UnityEngine.AI;
 public class SlimeAI : MonoBehaviour
 {
     [SerializeField]
-    private float health;
+    private float health = 3;
 
     [SerializeField]
-    private float point;
+    private float point = 5;
 
     [SerializeField]
     private AudioClip damageSound;
 
     [SerializeField]
-    private float detectionRange;
+    private float detectionRange = 10.0f;
 
     [SerializeField]
-    private float runSpeed;
+    private float runSpeed = 5.0f;
 
     [SerializeField]
-    private float normalSpeed;
+    private float normalSpeed = 2.0f;
+
+    [SerializeField]
+    private float offCourseInterval = 0.1f;
+
+    [SerializeField]
+    private float onCourseInterval = 2.0f;
 
     private GameManager gameManager;
     private Animator animator;
@@ -39,7 +45,7 @@ public class SlimeAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         escapePoints = GameObject.FindGameObjectsWithTag("EscapePoint");
-        agent.acceleration = 1000.0f;
+        agent.acceleration = 10000.0f;
         isRunning = false;
 
         if (escapePoints.Length == 0)
@@ -86,7 +92,7 @@ public class SlimeAI : MonoBehaviour
                 }
 
                 // If currently running, switch destination if current destination is already reached
-                else if (isRunning && (Vector3.Distance(transform.position, currentEscapePoint) <= 5.0f))
+                else if (isRunning && (Vector3.Distance(transform.position, currentEscapePoint) <= 3.0f))
                 {
                     agent.speed = runSpeed;
                     SetEscapeDest();
@@ -100,12 +106,13 @@ public class SlimeAI : MonoBehaviour
                 agent.speed = normalSpeed;
 
                 // Change escape point if already reached
-                if (Vector3.Distance(transform.position, currentEscapePoint) <= 5.0f)
+                if (Vector3.Distance(transform.position, currentEscapePoint) <= 3.0f)
                 {
                     currentEscapePoint = escapePoints[Random.Range(0, escapePoints.Length)].transform.position;
                     agent.SetDestination(currentEscapePoint);
                 }
             }
+
         }
     }
 
@@ -137,29 +144,43 @@ public class SlimeAI : MonoBehaviour
     private IEnumerator RandomDirection()
     {
         bool isOffCourse = false;
-        
+
         while (true)
-        { 
+        {
             if (!isOffCourse)
             {
                 // Set random
                 transform.Rotate(0, Random.Range(-60, 60), 0);
-                agent.SetDestination(transform.position + transform.forward * 10.0f);
+                
+                RaycastHit hitInfo;
+                bool isHit = Physics.Raycast(transform.position, transform.forward, out hitInfo, maxDistance: 20.0f);
+
+                if(isHit)
+                {
+                    agent.SetDestination(hitInfo.point);
+                    //Debug.DrawLine(transform.position, agent.destination, Color.green, duration: 1.0f);
+                }
+                else
+                {
+                    agent.SetDestination(transform.position + transform.forward * 5.0f);
+                }
 
                 isOffCourse = true;
+
+                if (isRunning)
+                    yield return new WaitForSeconds(offCourseInterval);
+                else
+                    yield return new WaitForSeconds(onCourseInterval);
             }
             else
             {
                 // Set to proper destination
                 agent.SetDestination(currentEscapePoint);
 
-                isOffCourse= false;
+                isOffCourse = false;
+                yield return new WaitForSeconds(onCourseInterval);
             }
 
-            if(isRunning)
-                yield return new WaitForSeconds(Random.Range(0.5f, 2.0f));
-            else
-                yield return new WaitForSeconds(3);
         }
     }
 
