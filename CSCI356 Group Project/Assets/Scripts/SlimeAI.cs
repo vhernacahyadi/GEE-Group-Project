@@ -119,24 +119,34 @@ public class SlimeAI : MonoBehaviour
     // Set currentEscapePoint to a new point
     private void SetEscapeDest()
     {
-        float bestDistance = 0;
-        int bestPoint = 0;
+        List<int> validEscapePoints = new List<int>();
 
-        // Loop through escape points and pick farthest
+        // Loop through escape points and check if it is far enough from player
         for (int i = 0; i < escapePoints.Length; i++)
         {
             Vector3 playerToEscapePoint = escapePoints[i].transform.position - player.transform.position;
             float distance = playerToEscapePoint.magnitude;
 
             // Do not pick the same point as current
-            if (distance > bestDistance && escapePoints[i].transform.position != agent.destination)
+            if (distance > detectionRange && escapePoints[i].transform.position != currentEscapePoint)
             {
-                bestPoint = i;
-                bestDistance = distance;
+                validEscapePoints.Add(i);
             }
         }
 
-        agent.SetDestination(escapePoints[bestPoint].transform.position);
+        // Randomly select escape points that are outside detection range
+        if (validEscapePoints.Count > 0)
+        {
+            int randIdx = Random.Range(0, validEscapePoints.Count);
+            agent.SetDestination(escapePoints[validEscapePoints[randIdx]].transform.position);
+        }
+        // If no escape point is far enough, select random
+        else
+        {
+            int randIdx = Random.Range(0, escapePoints.Length);
+            agent.SetDestination(escapePoints[randIdx].transform.position);
+        }
+
         currentEscapePoint = agent.destination;
     }
 
@@ -151,11 +161,11 @@ public class SlimeAI : MonoBehaviour
             {
                 // Set random
                 transform.Rotate(0, Random.Range(-80, 80), 0);
-                
+
                 RaycastHit hitInfo;
                 bool isHit = Physics.Raycast(transform.position, transform.forward, out hitInfo, maxDistance: 20.0f);
 
-                if(isHit)
+                if (isHit)
                 {
                     agent.SetDestination(hitInfo.point);
                     //Debug.DrawLine(transform.position, agent.destination, Color.green, duration: 1.0f);
@@ -167,7 +177,7 @@ public class SlimeAI : MonoBehaviour
 
                 isOffCourse = true;
 
-                if(isRunning)
+                if (isRunning)
                     yield return new WaitForSeconds(offCourseInterval);
                 else
                     yield return new WaitForSeconds(offCourseInterval * runSpeed / normalSpeed);
