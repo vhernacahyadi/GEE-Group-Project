@@ -18,7 +18,8 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded = true;
     private bool isJump = false;
     private Rigidbody rb;
-
+    private bool onIce = false;
+    private float mvX, mvZ;
 
     // Start is called before the first frame update
     void Start()
@@ -31,8 +32,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float mvX = Input.GetAxis("Horizontal") * Time.deltaTime * Speed;
-        float mvZ = Input.GetAxis("Vertical") * Time.deltaTime * Speed;
+        mvX = Input.GetAxis("Horizontal") * Time.deltaTime * Speed;
+        mvZ = Input.GetAxis("Vertical") * Time.deltaTime * Speed;
 
         if (mvX != 0 || mvZ != 0)
         {
@@ -67,7 +68,12 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(Physics.OverlapSphere(GroundTester.position, 0.5f, playerMask).Length == 0)
+        Debug.Log(isGrounded);
+        if (onIce)
+        {
+            rb.AddForce((transform.forward * mvZ + transform.right * mvX).normalized * 0.2f, ForceMode.Impulse);
+        }
+        if (Physics.OverlapSphere(GroundTester.position, 0.2f, playerMask).Length == 0)
         {
             isGrounded = false;
             return;
@@ -85,5 +91,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ice")
+            onIce = true;
+        else
+            onIce = false;
+    }
 }
