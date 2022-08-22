@@ -136,24 +136,26 @@ public class SlimeController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (isJumping && collision.collider.CompareTag("Boundary"))
+        // Jump again if collide with wall or other slimes
+        if (isJumping && (collision.collider.CompareTag("Boundary") || collision.collider.CompareTag("Target")))
         {
             // Play jump sound
             audioSource.Play();
 
             // Turn around
-            transform.Rotate(0, 180, 0, Space.Self);
+            transform.LookAt(collision.contacts[0].normal);
             transform.Rotate(0, Random.Range(-90, 90), 0, Space.Self); // add some randomness
 
             // Jump
             Vector3 jump = transform.forward.normalized * runSpeed;
-            jump.y = 0;
+            jump.y = 1.0f;
             rb.AddForce(jump, ForceMode.Impulse);
 
             isJumping = true;
         }
         else
         {
+            // Set isJumping to false to trigger jump on next Update
             isJumping = false;
         }
     }
@@ -166,12 +168,12 @@ public class SlimeController : MonoBehaviour
             audioSource.Play();
 
             // Turn around
-            transform.LookAt(collision.contacts[0].normal);
+            transform.Rotate(0, 180, 0);
             transform.Rotate(0, Random.Range(-90, 90), 0, Space.Self); // add some randomness
 
             // Jump
             Vector3 jump = transform.forward.normalized * runSpeed;
-            jump.y = 0;
+            jump.y = isJumping ? 0 : upForce;
             rb.AddForce(jump, ForceMode.Impulse);
 
             isJumping = true;
