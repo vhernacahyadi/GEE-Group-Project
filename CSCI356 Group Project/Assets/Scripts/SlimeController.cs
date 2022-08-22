@@ -32,7 +32,7 @@ public class SlimeController : MonoBehaviour
     private AudioSource audioSource;
     private AudioSource audioSource2;
 
-    public bool isJumping;
+    private bool isJumping;
     private Vector3 spawnPos;
 
     // Start is called before the first frame update
