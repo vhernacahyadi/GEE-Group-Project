@@ -150,7 +150,7 @@ public class SlimeAI : MonoBehaviour
             if (!isOffCourse)
             {
                 // Set random
-                transform.Rotate(0, Random.Range(-60, 60), 0);
+                transform.Rotate(0, Random.Range(-80, 80), 0);
                 
                 RaycastHit hitInfo;
                 bool isHit = Physics.Raycast(transform.position, transform.forward, out hitInfo, maxDistance: 20.0f);
@@ -167,10 +167,10 @@ public class SlimeAI : MonoBehaviour
 
                 isOffCourse = true;
 
-                if (isRunning)
+                if(isRunning)
                     yield return new WaitForSeconds(offCourseInterval);
                 else
-                    yield return new WaitForSeconds(onCourseInterval);
+                    yield return new WaitForSeconds(offCourseInterval * runSpeed / normalSpeed);
             }
             else
             {
