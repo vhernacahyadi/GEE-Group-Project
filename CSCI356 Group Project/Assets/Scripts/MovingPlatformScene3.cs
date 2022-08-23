@@ -6,7 +6,7 @@ public class MovingPlatformScene3 : MonoBehaviour
 {
     [SerializeField] GameObject[] wayPoints;
     int currentWayPointIndex = 0;
-     float speed = 5f;
+     float speed = 3.5f;
 
     // Update is called once per frame
     void Update()
