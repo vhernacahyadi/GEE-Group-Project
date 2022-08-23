@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(isGrounded);
+        //Debug.Log(isGrounded);
         if (onIce)
         {
             rb.AddForce((transform.forward * mvZ + transform.right * mvX).normalized * 0.2f, ForceMode.Impulse);
