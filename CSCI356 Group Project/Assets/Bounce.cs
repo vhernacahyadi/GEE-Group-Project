@@ -13,13 +13,15 @@ public class Bounce : MonoBehaviour
     GameObject rbBounce;
     Vector3 originalPosition;
     Vector3 desiredPosition;
+    float delay, timer;
     //[SerializeField public Transform endMarker;
-    private void Start()
+    void Start()
     {
         rbBounce = GameObject.FindWithTag("Bounce");
         Debug.Log("going bounce");
         originalPosition = rbBounce.transform.position;
-        desiredPosition = new Vector3(rbBounce.transform.position.x, rbBounce.transform.position.y + 10, rbBounce.transform.position.z);
+        desiredPosition = new Vector3(rbBounce.transform.position.x, rbBounce.transform.position.y *2, rbBounce.transform.position.z);
+        delay = 0.2f;
     }
 
     //private void OnTriggerEnter(Collider other)
@@ -27,21 +29,28 @@ public class Bounce : MonoBehaviour
     {
         GameObject bouncer = other.gameObject;
         Rigidbody rb = bouncer.GetComponent<Rigidbody>();
+        timer += Time.deltaTime;
 
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("on bounce");
             rb.AddForce(Vector3.up * bounceHelight);
+
             // rbBounce.transform.position = new Vector3(rbBounce.position.x, 5, rbBounce.position.z);
-            if (onAir == false)
-            {
-                rbBounce.transform.position = Vector3.MoveTowards(originalPosition, desiredPosition, Time.deltaTime * 6f);
+                rbBounce.transform.position = Vector3.MoveTowards(originalPosition, desiredPosition, 10 * Time.deltaTime );
                 Debug.Log(originalPosition);
-                rbBounce.transform.position = Vector3.MoveTowards(desiredPosition, originalPosition, Time.deltaTime * 0.4f);
 
-                onAir = true;
-            }
+         }
+    }
+    void Update()
+    {
+        Debug.Log(timer);
 
+        if (timer > delay)
+        {
+            Debug.Log("after 10 sec");
+            //rbBounce.transform.position = Vector3.MoveTowards(desiredPosition, originalPosition, 10 * Time.deltaTime);
+            rbBounce.transform.position = originalPosition * Time.deltaTime;
         }
     }
 }
