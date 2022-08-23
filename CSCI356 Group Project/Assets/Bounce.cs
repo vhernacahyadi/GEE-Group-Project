@@ -23,7 +23,7 @@ public class Bounce : MonoBehaviour
         Rigidbody rb = bouncer.GetComponent<Rigidbody>();
         GameObject rbBounce = GameObject.FindWithTag("Bounce");
         Debug.Log("going bounce");
-        Vector3 desiredPosition = new Vector3(rbBounce.transform.position.x, 5, rbBounce.transform.position.z);
+        Vector3 desiredPosition = new Vector3(rbBounce.transform.position.x, rbBounce.transform.position.y+ 5, rbBounce.transform.position.z);
         if (other.gameObject.tag == "Player"&& onAir==false)
         {
             Debug.Log("on bounce");
@@ -31,7 +31,7 @@ public class Bounce : MonoBehaviour
             // rbBounce.transform.position = new Vector3(rbBounce.position.x, 5, rbBounce.position.z);
 
             rbBounce.transform.position = Vector3.MoveTowards(rbBounce.transform.position, desiredPosition, Time.deltaTime * 3f);
-            onAir = true;
+            //onAir = true;
         }
     }
 }
