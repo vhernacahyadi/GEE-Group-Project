@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 129994915}
   - component: {fileID: 129994914}
   - component: {fileID: 129994913}
+  - component: {fileID: 129994919}
   - component: {fileID: 129994918}
   m_Layer: 0
   m_Name: Cannon
@@ -332,6 +333,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &129994919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129994912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 832416c9fe2e5594689f6ff22a540d2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &340882810
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,6 +358,7 @@ GameObject:
   - component: {fileID: 340882814}
   - component: {fileID: 340882813}
   - component: {fileID: 340882812}
+  - component: {fileID: 340882817}
   m_Layer: 0
   m_Name: Target
   m_TagString: Untagged
@@ -360,7 +374,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340882810}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 200
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -446,6 +460,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &340882817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340882810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93fcd53da99d8bf458f7d1c07607a8d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 3}
 --- !u!1 &552039217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,7 +1247,7 @@ GameObject:
   - component: {fileID: 1340484102}
   - component: {fileID: 1340484101}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Player UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1381,7 +1408,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Interaction Text
+  m_Text: 
 --- !u!222 &1452928974
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2520,6 +2547,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
+  jumpPower: 5
+  GroundTester: {fileID: 868378279}
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &7922839357514548496
 MonoBehaviour:
   m_ObjectHideFlags: 0
