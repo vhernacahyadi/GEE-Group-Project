@@ -79,7 +79,7 @@ public class SlimeController : MonoBehaviour
                 audioSource.Play();
 
                 playerToSlime.y = 0;
-                transform.rotation = Quaternion.LookRotation(playerToSlime, Vector3.up); // face away from player
+                transform.rotation = Quaternion.LookRotation(playerToSlime); // face away from player
                 transform.Rotate(0, Random.Range(-20, 20), 0, Space.Self); // add some randomness
 
                 // Jump
@@ -101,7 +101,7 @@ public class SlimeController : MonoBehaviour
 
                 if (toSpawnPoint != Vector3.zero)
                 {
-                    transform.rotation = Quaternion.LookRotation(toSpawnPoint, Vector3.up); // face spawnPos direction
+                    transform.rotation = Quaternion.LookRotation(toSpawnPoint); // face spawnPos direction
                 }
                 transform.Rotate(0, Random.Range(-20, 20), 0, Space.Self); // add some randomness
 
@@ -137,20 +137,20 @@ public class SlimeController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Jump again if collide with wall or other slimes
-        if (isJumping && (collision.collider.CompareTag("Boundary")))
+        if ((collision.collider.CompareTag("Boundary") || (collision.collider.CompareTag("Target"))))
         {
             // Play jump sound
             audioSource.Play();
 
             // Turn around
-            Vector3 contactToSlime = collision.contacts[0].point;
+            Vector3 contactToSlime = transform.position - collision.contacts[0].point;
             contactToSlime.y = 0;
-            transform.LookAt(-contactToSlime, Vector3.up);
-            //transform.Rotate(0, Random.Range(-90, 90), 0, Space.Self); // add some randomness
+            transform.rotation = Quaternion.LookRotation(contactToSlime);
+            transform.Rotate(0, Random.Range(-90, 90), 0, Space.Self); // add some randomness
 
             // Jump
-            Vector3 jump = transform.forward.normalized * runSpeed;
-            jump.y = 1.0f;
+            Vector3 jump = transform.forward.normalized;
+            jump.y = isJumping ? 0 : 1.0f;
             rb.AddForce(jump, ForceMode.Impulse);
 
             isJumping = true;
@@ -164,22 +164,24 @@ public class SlimeController : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.collider.CompareTag("Boundary"))
-        {
-            // Play jump sound
-            audioSource.Play();
+        //if (collision.collider.CompareTag("Boundary"))
+        //{
+        // Play jump sound
+        audioSource.Play();
 
-            // Turn around
-            transform.Rotate(0, 180, 0);
-            transform.Rotate(0, Random.Range(-90, 90), 0, Space.Self); // add some randomness
+        // Turn around
+        Vector3 contactToSlime = transform.position - collision.contacts[0].point;
+        contactToSlime.y = 0;
+        transform.rotation = Quaternion.LookRotation(contactToSlime);
+        transform.Rotate(0, Random.Range(-90, 90), 0, Space.Self); // add some randomness
 
-            // Jump
-            Vector3 jump = transform.forward.normalized * runSpeed;
-            jump.y = isJumping ? 0 : upForce;
-            rb.AddForce(jump, ForceMode.Impulse);
+        // Jump
+        Vector3 jump = transform.forward.normalized;
+        jump.y = 1.0f;
+        rb.AddForce(jump, ForceMode.Impulse);
 
-            isJumping = true;
-        }
+        isJumping = true;
+        //}
     }
 
     private void OnTriggerEnter(Collider other)
