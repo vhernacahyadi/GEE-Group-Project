@@ -11,6 +11,7 @@ TagManager:
   - platformCollider
   - EscapePoint
   - Ice
+  - Bounce
   layers:
   - Default
   - TransparentFX
