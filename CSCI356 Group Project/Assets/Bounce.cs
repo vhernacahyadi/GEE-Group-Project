@@ -21,7 +21,7 @@ public class Bounce : MonoBehaviour
         Debug.Log("going bounce");
         originalPosition = rbBounce.transform.position;
         desiredPosition = new Vector3(rbBounce.transform.position.x, rbBounce.transform.position.y *2, rbBounce.transform.position.z);
-        delay = 0.2f;
+        delay = 0.1f;
     }
 
     //private void OnTriggerEnter(Collider other)
@@ -41,16 +41,17 @@ public class Bounce : MonoBehaviour
                 Debug.Log(originalPosition);
 
          }
-    }
-    void Update()
-    {
         Debug.Log(timer);
 
         if (timer > delay)
         {
             Debug.Log("after 10 sec");
-            //rbBounce.transform.position = Vector3.MoveTowards(desiredPosition, originalPosition, 10 * Time.deltaTime);
-            rbBounce.transform.position = originalPosition * Time.deltaTime;
+            rbBounce.transform.position = Vector3.MoveTowards(desiredPosition, originalPosition, -10 * Time.deltaTime);
+            // rbBounce.transform.position = originalPosition * Time.deltaTime;
         }
+    }
+    void Update()
+    {
+
     }
 }
