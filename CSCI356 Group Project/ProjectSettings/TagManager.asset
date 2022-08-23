@@ -10,6 +10,7 @@ TagManager:
   - Boundary
   - platformCollider
   - EscapePoint
+  - Ice
   layers:
   - Default
   - TransparentFX
