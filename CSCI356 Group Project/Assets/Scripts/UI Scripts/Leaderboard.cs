@@ -68,9 +68,9 @@ public class Leaderboard : MonoBehaviour
 
     public static void SaveScore()
     {
-        HighscoreList highscoreList = new HighscoreList();
+        HighscoreList highscoreList = JsonUtility.FromJson<HighscoreList>(PlayerPrefs.GetString("Leaderboard"));
 
-        if (highscoreList.scoreList == null)
+        if (highscoreList == null || highscoreList.scoreList == null)
         {
             highscoreList = new HighscoreList();
         }
