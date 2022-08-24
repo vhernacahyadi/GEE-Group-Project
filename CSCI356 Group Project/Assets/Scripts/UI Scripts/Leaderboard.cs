@@ -43,11 +43,11 @@ public class Leaderboard : MonoBehaviour
             highscoreList = new HighscoreList();
         }
 
-        // Sort descending
-        highscoreList.scoreList.Sort((a, b) => b.Score - a.Score);
+        //// Sort descending
+        //highscoreList.scoreList.Sort((a, b) => b.Score - a.Score);
 
-        // Take only top 10
-        highscoreList.scoreList.Take(10);
+        //// Take only top 10
+        //highscoreList.scoreList.Take(10);
 
         // Loop to display
         for (int i = 0; i < highscoreList.scoreList.Count; i++)
@@ -77,6 +77,12 @@ public class Leaderboard : MonoBehaviour
 
         // Add new highscore
         highscoreList.scoreList.Add(new Highscore(EnterName.Name, EnterName.Score));
+
+        // Sort descending
+        highscoreList.scoreList.Sort((a, b) => b.Score - a.Score);
+
+        // Take only top 10
+        highscoreList.scoreList.Take(10);
 
         //Debug.Log("Serialize " + JsonUtility.ToJson(highscoreList));
 
