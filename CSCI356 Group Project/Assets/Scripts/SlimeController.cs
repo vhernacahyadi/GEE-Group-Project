@@ -8,7 +8,7 @@ public class SlimeController : MonoBehaviour
     private float health;
 
     [SerializeField]
-    private float point;
+    private int point;
 
     [SerializeField]
     private AudioClip jumpSound;
