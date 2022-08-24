@@ -475,8 +475,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fa15bd38e103f64f8109e7b3f2cbf87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverCamera: {fileID: 4363408055815140942}
-  gameOverUI: {fileID: 4474246522556853107}
 --- !u!1 &770340221
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,7 +1060,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceHelight: 500
-  playerAnimator: {fileID: 0}
 --- !u!65 &2090780262
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1071,7 +1068,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090780260}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1.4, z: 1}
@@ -1175,7 +1172,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!1001 &1489920814301776876
 PrefabInstance:
