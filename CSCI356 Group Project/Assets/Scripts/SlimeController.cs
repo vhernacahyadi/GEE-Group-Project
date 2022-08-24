@@ -172,7 +172,8 @@ public class SlimeController : MonoBehaviour
         // Turn around
         Vector3 contactToSlime = transform.position - collision.contacts[0].point;
         contactToSlime.y = 0;
-        transform.rotation = Quaternion.LookRotation(contactToSlime);
+        if (contactToSlime != Vector3.zero)
+            transform.rotation = Quaternion.LookRotation(contactToSlime);
         transform.Rotate(0, Random.Range(-90, 90), 0, Space.Self); // add some randomness
 
         // Jump
