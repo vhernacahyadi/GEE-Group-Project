@@ -9,7 +9,7 @@ public class SlimeAI : MonoBehaviour
     private float health = 3;
 
     [SerializeField]
-    private float point = 5;
+    private int point = 5;
 
     [SerializeField]
     private AudioClip damageSound;

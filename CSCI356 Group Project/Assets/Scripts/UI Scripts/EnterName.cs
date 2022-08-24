@@ -27,6 +27,7 @@ public class EnterName : MonoBehaviour
     public void PlayGame()
     {
         // Load First Stage of the game
+        Score = 0;
         Debug.Log("Game Start!");
         SceneManager.LoadScene("Level 1");
     }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static float currentScore = EnterName.Score;
+    public static int currentScore = EnterName.Score;
     public static int bulletAmount = 20;
 
     public GameObject CompleteLevelUI;
@@ -36,9 +36,6 @@ public class GameManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Level 3")
         {
-            // Save Name & Score here...
-
-
             // Go to the next scene [Game Over Scene]
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
