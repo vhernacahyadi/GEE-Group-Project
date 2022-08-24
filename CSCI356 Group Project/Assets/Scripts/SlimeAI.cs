@@ -41,6 +41,7 @@ public class SlimeAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         player = GameObject.FindWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
