@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class EnterName : MonoBehaviour
 {
     public static string Name;
-    public static int Score = 5;
+    public static int Score = 0;
     public InputField inputName;
     public Text WarningText;
 

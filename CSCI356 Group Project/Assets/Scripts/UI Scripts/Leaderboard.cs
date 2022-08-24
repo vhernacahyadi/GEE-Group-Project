@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -37,7 +38,7 @@ public class Leaderboard : MonoBehaviour
     {
         HighscoreList highscoreList = JsonUtility.FromJson<HighscoreList>(PlayerPrefs.GetString("Leaderboard"));
 
-        if(highscoreList == null || highscoreList.scoreList == null)
+        if (highscoreList == null || highscoreList.scoreList == null)
         {
             highscoreList = new HighscoreList();
         }
@@ -45,9 +46,11 @@ public class Leaderboard : MonoBehaviour
         // Sort descending
         highscoreList.scoreList.Sort((a, b) => b.Score - a.Score);
 
-        int counter = highscoreList.scoreList.Count < 10 ? highscoreList.scoreList.Count : 10;
+        // Take only top 10
+        highscoreList.scoreList.Take(10);
 
-        for (int i = 0; i < counter; i++)
+        // Loop to display
+        for (int i = 0; i < highscoreList.scoreList.Count; i++)
         {
             Transform entry = Instantiate(entryTemplate, transform);
             RectTransform rectTransform = entry.GetComponent<RectTransform>();
@@ -63,10 +66,10 @@ public class Leaderboard : MonoBehaviour
         }
     }
 
-    public void RecordScore()
+    public static void SaveScore()
     {
         HighscoreList highscoreList = new HighscoreList();
-        
+
         if (highscoreList.scoreList == null)
         {
             highscoreList = new HighscoreList();
@@ -75,12 +78,13 @@ public class Leaderboard : MonoBehaviour
         // Add new highscore
         highscoreList.scoreList.Add(new Highscore(EnterName.Name, EnterName.Score));
 
-        Debug.Log("Serialize " + JsonUtility.ToJson(highscoreList));
+        //Debug.Log("Serialize " + JsonUtility.ToJson(highscoreList));
 
+        // Save to player pref
         PlayerPrefs.SetString("Leaderboard", JsonUtility.ToJson(highscoreList));
         PlayerPrefs.Save();
 
-        Debug.Log("Prefs " + PlayerPrefs.GetString("Leaderboard"));
+        //Debug.Log("Prefs " + PlayerPrefs.GetString("Leaderboard"));
     }
 
     private class HighscoreList
@@ -101,7 +105,7 @@ public class Leaderboard : MonoBehaviour
 
         public Highscore(string name, int score)
         {
-            Name = name;    
+            Name = name;
             Score = score;
         }
     }
