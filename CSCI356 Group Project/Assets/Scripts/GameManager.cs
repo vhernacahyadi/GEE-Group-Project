@@ -21,13 +21,13 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         Debug.Log("Awake:" + SceneManager.GetActiveScene().name);
-        if(SceneManager.GetActiveScene().name == "Level 1")
+        if (SceneManager.GetActiveScene().name == "Level 1")
         {
             GameObject cannon = GameObject.Find("Cannon"); // Finds a game object by name
             cannon.transform.position = new Vector3(cannon.transform.position.x, 3.5f, cannon.transform.position.z);
         }
 
-        if(SceneManager.GetActiveScene().name == "Level 2")
+        if (SceneManager.GetActiveScene().name == "Level 2")
         {
             // activate button
             GameObject sw = GameObject.Find("Switch"); // Finds a game object by name
@@ -43,9 +43,9 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Over!");
     }
 
-    public void AddScore(int amount)
+    public void AddScore(float amount)
     {
         Debug.Log("SCORE ADDED!");
-        EnterName.Score += amount;
+        EnterName.Score += (int)amount;
     }
 }
