@@ -46,9 +46,9 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Over!");
     }
 
-    public void AddScore(float amount)
+    public void AddScore(int amount)
     {
         Debug.Log("SCORE ADDED!");
-        currentScore += amount;
+        EnterName.Score += amount;
     }
 }

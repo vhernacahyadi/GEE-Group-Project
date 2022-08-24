@@ -16,6 +16,7 @@ public class GameOver : MonoBehaviour
         Cursor.visible = true;
 
         // Save Scores Here...
+        Leaderboard.SaveScore();
 
     }
 
