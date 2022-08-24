@@ -40,12 +40,8 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
-        // Destroy all slimes on scene
-        GameObject[] slimes = GameObject.FindGameObjectsWithTag("Target");
-        for (int i = 0; i < slimes.Length; i++)
-        {
-            Destroy(slimes[i]);
-        }     
+        // Disable Spawning Slimes Here...
+
 
         Debug.Log("Game Over!");
     }

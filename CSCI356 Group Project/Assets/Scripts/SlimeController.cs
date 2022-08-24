@@ -208,7 +208,7 @@ public class SlimeController : MonoBehaviour
             // Increment the score in the GameManager when the slime is damaged
             if (gameManager != null)
             {
-                gameManager.AddScore(point);
+                gameManager.AddScore((int)point);
             }
 
             // Play damaged sound

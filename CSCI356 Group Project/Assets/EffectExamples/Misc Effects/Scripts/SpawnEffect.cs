@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SpawnEffect : MonoBehaviour {
 
-    public float spawnEffectTime = 2;
-    public float pause = 1;
+    public float spawnEffectTime = 3;
+    public float pause = 0;
     public AnimationCurve fadeIn;
 
     ParticleSystem ps;
@@ -33,11 +33,11 @@ public class SpawnEffect : MonoBehaviour {
         {
             timer += Time.deltaTime;
         }
-        else
-        {
-            ps.Play();
-            timer = 0;
-        }
+        //else
+        //{
+        //    ps.Play();
+            //timer = 0;
+        //}
 
 
         _renderer.material.SetFloat(shaderProperty, fadeIn.Evaluate( Mathf.InverseLerp(0, spawnEffectTime, timer)));
