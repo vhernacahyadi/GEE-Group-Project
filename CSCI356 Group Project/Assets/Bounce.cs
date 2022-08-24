@@ -46,7 +46,7 @@ public class Bounce : MonoBehaviour
         if (timer > delay)
         {
             Debug.Log("after 10 sec");
-            rbBounce.transform.position = Vector3.MoveTowards(desiredPosition, originalPosition, -10 * Time.deltaTime);
+            rbBounce.transform.position = Vector3.MoveTowards(desiredPosition, originalPosition, 10 * Time.deltaTime);
             // rbBounce.transform.position = originalPosition * Time.deltaTime;
         }
     }
