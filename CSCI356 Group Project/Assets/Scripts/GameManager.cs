@@ -40,6 +40,9 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
+        // Disable Spawning Slimes Here...
+
+
         Debug.Log("Game Over!");
     }
 
