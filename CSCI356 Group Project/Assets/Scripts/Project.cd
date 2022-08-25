@@ -3,7 +3,7 @@
   <Class Name="Bounce">
     <Position X="1.5" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAACAAAEQAAAAAAAkAAAAAAACKACAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAACAAAEQAAAAAAAgAAAAAAACKACAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Bounce.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -17,7 +17,7 @@
   <Class Name="DoorAnimation">
     <Position X="7.25" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAACAAIAAAAAAAAAAgAAEAAAAAAAAAACAAAAA=</HashCode>
+      <HashCode>AAQAAAAAACAAIAAAAAAAAAAgAAAAAQAAAAAAACAAAAA=</HashCode>
       <FileName>Assets\Scripts\DoorAnimation.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -155,7 +155,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="InteractCannon">
-    <Position X="27.5" Y="8.75" Width="2.25" />
+    <Position X="28" Y="8.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAICAAAAAAIAAAAAAAIAAQAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Interaction\InteractCannon.cs</FileName>
