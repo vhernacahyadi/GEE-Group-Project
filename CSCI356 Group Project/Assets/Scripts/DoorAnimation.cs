@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DoorAnimation : MonoBehaviour {
 
-    float SPEED = 5.0F;  // rotation speed
+    float speed = 5.0F;  // rotation speed
     private int stopAngle;
     private Vector3 direction;
     private bool isOpen = false;
@@ -18,7 +18,7 @@ public class DoorAnimation : MonoBehaviour {
 	void Update () {
         if ((int)transform.eulerAngles.y != stopAngle) // rotate untill current angle != stop angle
         {
-            transform.Rotate(direction * SPEED);
+            transform.Rotate(direction * speed);
         }
 
         if( Input.GetKeyDown(KeyCode.O)  ) 
