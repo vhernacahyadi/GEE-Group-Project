@@ -25,7 +25,7 @@ public class gunShooter : MonoBehaviour
     {
         const int damage = 1;
 
-        if (Input.GetButtonDown("Fire1") && GameManager.bulletAmount>0)
+        if (Input.GetButtonDown("Fire1"))
         {
             Vector3 directionOfFire = playerCamera.transform.forward;
 
