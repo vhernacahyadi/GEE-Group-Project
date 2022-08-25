@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Bounce">
+    <Position X="4.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAEQAAAAAAAkAAAAAAACKACAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Bounce.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BulletScript">
+    <Position X="8.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\BulletScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DoorAnimation">
+    <Position X="1.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAIAAAAAAAAAAgAAEAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Assets\Scripts\DoorAnimation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
