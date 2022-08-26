@@ -6,10 +6,11 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static int currentScore = EnterName.Score;
-    public static int bulletAmount = 20;
+    public static int currentScore = GameSession.Score;
+   // public static int bulletAmount = 20;
 
     public GameObject CompleteLevelUI;
+    public Text ObjectiveTextUI;
 
     public void CompleteLevel()
     {
@@ -23,12 +24,15 @@ public class GameManager : MonoBehaviour
         Debug.Log("Awake:" + SceneManager.GetActiveScene().name);
         if (SceneManager.GetActiveScene().name == "Level 1")
         {
+            ObjectiveTextUI.text = "Interact with the Cannon to open the door";
             GameObject cannon = GameObject.Find("Cannon"); // Finds a game object by name
             cannon.transform.position = new Vector3(cannon.transform.position.x, 3.5f, cannon.transform.position.z);
         }
 
         if (SceneManager.GetActiveScene().name == "Level 2")
         {
+            ObjectiveTextUI.text = "Find the button to go to the next level!";
+
             // activate button
             GameObject sw = GameObject.Find("Switch"); // Finds a game object by name
             sw.transform.position = new Vector3(sw.transform.position.x, 2.5f, sw.transform.position.z);
@@ -54,6 +58,6 @@ public class GameManager : MonoBehaviour
     public void AddScore(float amount)
     {
         Debug.Log("SCORE ADDED!");
-        EnterName.Score += (int)amount;
+        GameSession.Score += (int)amount;
     }
 }

@@ -4,19 +4,14 @@ using UnityEngine;
 
 public class Bounce : MonoBehaviour
 {
-    //public float BouncingForce = 2f;
-    //public Rigidbody PlayerBall;
-    // [Range(100, 1000)]
-    public float bounceHelight = 500;
-    //[SerializeField]private Animator playerAnimator;
-    private bool onAir = false;
+    private float bounceHelight = 500;
     private bool startTimer = false;
     GameObject rbBounce;
     Vector3 originalPosition;
     Vector3 desiredPosition;
     float delay, timer;
 
-    //[SerializeField public Transform endMarker;
+ 
     void Start()
     {
         rbBounce = GameObject.FindWithTag("Bounce");
@@ -26,7 +21,7 @@ public class Bounce : MonoBehaviour
         delay = 0.1f;
     }
 
-    //private void OnTriggerEnter(Collider other)
+ 
     private void OnCollisionEnter(Collision other)
     {
         GameObject bouncer = other.gameObject;
@@ -34,16 +29,11 @@ public class Bounce : MonoBehaviour
 
         if (other.gameObject.tag == "Player")
         {
-            //Debug.LogError("on bounce");
             rb.AddForce(Vector3.up * bounceHelight);
-            startTimer = true;
-            // rbBounce.transform.position = new Vector3(rbBounce.position.x, 5, rbBounce.position.z);
+            startTimer = true;          
         }
         else
             startTimer = false;
-
-        //Debug.LogError(originalPosition);
-        //Debug.LogError(desiredPosition);
 
 
     }
