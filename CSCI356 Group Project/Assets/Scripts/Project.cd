@@ -24,7 +24,7 @@
   <Class Name="GameManager">
     <Position X="13" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAEAABAAAAAAAYAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAEAABAAABAAAYAAA=</HashCode>
       <FileName>Assets\Scripts\GameManager.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -220,6 +220,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\UI Scripts\MainMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PauseMenu">
+    <Position X="22.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQgAAAAAAAAAAAAAAAAAAAAAAAAAAABAABAACgAIAA=</HashCode>
+      <FileName>Assets\Scripts\UI Scripts\PauseMenu.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
