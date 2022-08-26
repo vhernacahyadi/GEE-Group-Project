@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static int currentScore = EnterName.Score;
+    public static int currentScore = GameSession.Score;
    // public static int bulletAmount = 20;
 
     public GameObject CompleteLevelUI;
@@ -58,6 +58,6 @@ public class GameManager : MonoBehaviour
     public void AddScore(float amount)
     {
         Debug.Log("SCORE ADDED!");
-        EnterName.Score += (int)amount;
+        GameSession.Score += (int)amount;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class EnterName : MonoBehaviour
+public class GameSession : MonoBehaviour
 {
     public static string Name;
     public static int Score = 0;
