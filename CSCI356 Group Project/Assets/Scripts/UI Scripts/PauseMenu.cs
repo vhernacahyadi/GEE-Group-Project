@@ -35,7 +35,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = false;
 
         // Enable player shooting & moving when resumed
-        player.GetComponent<gunShooter>().enabled = true;
+        player.GetComponent<GunShooter>().enabled = true;
         playerCamera.GetComponent<RotationController>().enabled = true;
 
         // Unfreeze the game
@@ -51,7 +51,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = true;
 
         // Disable player shooting & moving when paused
-        player.GetComponent<gunShooter>().enabled = false;
+        player.GetComponent<GunShooter>().enabled = false;
         playerCamera.GetComponent<RotationController>().enabled = false;
 
         // Freeze the game
