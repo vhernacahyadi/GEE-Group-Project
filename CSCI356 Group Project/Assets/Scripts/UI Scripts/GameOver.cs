@@ -11,7 +11,7 @@ public class GameOver : MonoBehaviour
 
     void Start()
     {
-        FinalScore.text = EnterName.Score.ToString();
+        FinalScore.text = GameSession.Score.ToString();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 

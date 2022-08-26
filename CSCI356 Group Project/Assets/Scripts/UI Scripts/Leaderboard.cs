@@ -76,7 +76,7 @@ public class Leaderboard : MonoBehaviour
         }
 
         // Add new highscore
-        highscoreList.scoreList.Add(new Highscore(EnterName.Name, EnterName.Score));
+        highscoreList.scoreList.Add(new Highscore(GameSession.Name, GameSession.Score));
 
         // Sort descending
         highscoreList.scoreList.Sort((a, b) => b.Score - a.Score);
