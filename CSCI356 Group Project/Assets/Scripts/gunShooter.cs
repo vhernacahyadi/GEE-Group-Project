@@ -23,22 +23,23 @@ public class gunShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        const int damage = 1;
 
         if (Input.GetButtonDown("Fire1"))
         {
-            Vector3 directionOfFire = playerCamera.transform.forward;
+            //Vector3 directionOfFire = playerCamera.transform.forward;
 
-            if(Physics.Raycast(transform.position, directionOfFire, out hitInfo, 20))
+            RaycastHit hit;
+
+            if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit))
             {
-                //target damage calculations goes here
+                spawnPoint.transform.LookAt(hit.point);
             }
-           
+
 
             //Spawn bullet
             gunAudio.PlayOneShot(gunShootClip);
             GameObject newBulletPrefab = GameObject.Instantiate(bulletPrefab, spawnPoint.transform.position, Quaternion.identity);
-            newBulletPrefab.GetComponent<Rigidbody>().AddForce(directionOfFire * bulletForce, ForceMode.Impulse);
+            newBulletPrefab.GetComponent<Rigidbody>().AddForce(spawnPoint.transform.forward * bulletForce, ForceMode.Impulse);
 
         }
     }
