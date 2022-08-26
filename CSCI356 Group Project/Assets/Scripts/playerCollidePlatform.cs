@@ -1,17 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class PlayerCollidePlatform : MonoBehaviour
 {
-	private GameObject player;
 	[SerializeField] GameObject gameOverCamera;
 	[SerializeField] GameObject gameOverUI;
 	// Start is called before the first frame update
 	void Start()
     {
-		player = GameObject.FindWithTag("Player");
-
 	}
 
 
@@ -20,9 +18,19 @@ public class PlayerCollidePlatform : MonoBehaviour
 		if (cls.gameObject.name == "level")
 		{
 			Debug.Log ("Collision");
-			gameOverCamera.SetActive(true);
-			gameOverUI.SetActive(true);
-			Destroy(gameObject);
+			/*	gameOverCamera.SetActive(true);
+				gameOverUI.SetActive(true);
+				Destroy(gameObject);*/
+			if (SceneManager.GetActiveScene().name == "Level 2")
+			{
+				//Debug.Log("Level2");
+				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1 + 1);
+			}
+			if (SceneManager.GetActiveScene().name == "Level 3")
+			{
+				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+			}
+
 		}
 	}
 }
