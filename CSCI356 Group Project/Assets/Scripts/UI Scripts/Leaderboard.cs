@@ -1,30 +1,28 @@
+using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Leaderboard : MonoBehaviour
 {
     [SerializeField] private float entryTemplateHeight = 35.0f;
 
-    //private Transform container;
     private Transform entryTemplate;
 
     // Start is called before the first frame update
     void Start()
     {
-        //container = transform.Find("EntryContainer");
         entryTemplate = transform.Find("EntryTemplate");
 
-        //Debug.Log(container == null ? "Container is null" : "Container not null");
         //Debug.Log(entryTemplate == null ? "Template is null" : "Template not null");
 
         // Deactivate template
         entryTemplate.gameObject.SetActive(false);
 
         DisplayLeaderboard();
+
     }
 
     // Update is called once per frame
@@ -36,21 +34,17 @@ public class Leaderboard : MonoBehaviour
 
     private void DisplayLeaderboard()
     {
-        HighscoreList highscoreList = JsonUtility.FromJson<HighscoreList>(PlayerPrefs.GetString("Leaderboard"));
-
-        if (highscoreList == null || highscoreList.scoreList == null)
+        List<Highscore> scoreList = JsonConvert.DeserializeObject<List<Highscore>>(PlayerPrefs.GetString("Leaderboard"));
+            
+        if (scoreList == null)
         {
-            highscoreList = new HighscoreList();
+            scoreList = new List<Highscore>();
         }
 
-        //// Sort descending
-        //highscoreList.scoreList.Sort((a, b) => b.Score - a.Score);
-
-        //// Take only top 10
-        //highscoreList.scoreList.Take(10);
+        //Debug.Log("Prefs " + PlayerPrefs.GetString("Leaderboard"));
 
         // Loop to display
-        for (int i = 0; i < highscoreList.scoreList.Count; i++)
+        for (int i = 0; i < scoreList.Count; i++)
         {
             Transform entry = Instantiate(entryTemplate, transform);
             RectTransform rectTransform = entry.GetComponent<RectTransform>();
@@ -60,59 +54,56 @@ public class Leaderboard : MonoBehaviour
             entry.gameObject.SetActive(true);
 
             // Set text to entry
-            entry.Find("Rank").GetComponent<TMP_Text>().SetText((i + 1) + "");
-            entry.Find("Name").GetComponent<TMP_Text>().text = highscoreList.scoreList[i].Name;
-            entry.Find("Score").GetComponent<TMP_Text>().text = highscoreList.scoreList[i].Score + "";
+            entry.Find("Rank").GetComponent<TMP_Text>().text = (i + 1).ToString();
+            entry.Find("Name").GetComponent<TMP_Text>().text = scoreList[i].Name;
+            entry.Find("Score").GetComponent<TMP_Text>().text = scoreList[i].Score.ToString();
         }
+
     }
 
     public static void SaveScore()
     {
-        HighscoreList highscoreList = JsonUtility.FromJson<HighscoreList>(PlayerPrefs.GetString("Leaderboard"));
+        List<Highscore> scoreList = JsonConvert.DeserializeObject<List<Highscore>>(PlayerPrefs.GetString("Leaderboard"));
 
-        if (highscoreList == null || highscoreList.scoreList == null)
+        if (scoreList == null)
         {
-            highscoreList = new HighscoreList();
+            scoreList = new List<Highscore>();
         }
 
+        //Debug.Log("Prefs " + PlayerPrefs.GetString("Leaderboard"));
+
         // Add new highscore
-        highscoreList.scoreList.Add(new Highscore(EnterName.Name, EnterName.Score));
+        scoreList.Add(new Highscore(EnterName.Name, EnterName.Score));
 
         // Sort descending
-        highscoreList.scoreList.Sort((a, b) => b.Score - a.Score);
+        scoreList.Sort((a, b) => b.Score - a.Score);
 
         // Take only top 10
-        highscoreList.scoreList.Take(10);
-
-        //Debug.Log("Serialize " + JsonUtility.ToJson(highscoreList));
+        scoreList.Take(10);
 
         // Save to player pref
-        PlayerPrefs.SetString("Leaderboard", JsonUtility.ToJson(highscoreList));
+        PlayerPrefs.SetString("Leaderboard", JsonConvert.SerializeObject(scoreList));
         PlayerPrefs.Save();
 
         //Debug.Log("Prefs " + PlayerPrefs.GetString("Leaderboard"));
     }
 
-    private class HighscoreList
-    {
-        public List<Highscore> scoreList;
-
-        public HighscoreList()
-        {
-            scoreList = new List<Highscore>();
-        }
-    }
-
-    [System.Serializable]
+    [JsonObject]
     private class Highscore
     {
-        public string Name;
-        public int Score;
+        private string name;
+        private int score;
+
+        [JsonProperty]
+        public string Name { get { return name; } set { name = value; } }
+
+        [JsonProperty]
+        public int Score { get { return score; } set { score = value; } }
 
         public Highscore(string name, int score)
         {
-            Name = name;
-            Score = score;
+            this.name = name;
+            this.score = score;
         }
     }
 }
