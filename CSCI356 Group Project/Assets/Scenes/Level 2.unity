@@ -266,6 +266,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1098628671, guid: 591c2cc9d9adbf04b8bedc72c28e8977, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1627408539280653600, guid: 591c2cc9d9adbf04b8bedc72c28e8977,
         type: 3}
       propertyPath: m_Name
@@ -396,6 +400,18 @@ PrefabInstance:
 --- !u!114 &60243175 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1627408539162867945, guid: 591c2cc9d9adbf04b8bedc72c28e8977,
+    type: 3}
+  m_PrefabInstance: {fileID: 60243174}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &60243176 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1098628671, guid: 591c2cc9d9adbf04b8bedc72c28e8977,
     type: 3}
   m_PrefabInstance: {fileID: 60243174}
   m_PrefabAsset: {fileID: 0}
@@ -1505,6 +1521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CompleteLevelUI: {fileID: 0}
+  ObjectiveTextUI: {fileID: 0}
 --- !u!1001 &475414885
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4910,6 +4927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CompleteLevelUI: {fileID: 405948849}
+  ObjectiveTextUI: {fileID: 60243176}
 --- !u!4 &1889636364
 Transform:
   m_ObjectHideFlags: 0
