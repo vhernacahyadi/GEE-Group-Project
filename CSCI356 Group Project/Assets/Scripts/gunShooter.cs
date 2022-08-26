@@ -7,7 +7,7 @@ public class gunShooter : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Camera playerCamera;
     [SerializeField] private Transform spawnPoint;
-    [SerializeField] private float bulletForce = 10f;
+    [SerializeField] private float bulletForce = 200f;
     [SerializeField] private AudioClip gunShootClip;
 
     private RaycastHit hitInfo;
@@ -40,6 +40,7 @@ public class gunShooter : MonoBehaviour
             gunAudio.PlayOneShot(gunShootClip);
             GameObject newBulletPrefab = GameObject.Instantiate(bulletPrefab, spawnPoint.transform.position, Quaternion.identity);
             newBulletPrefab.GetComponent<Rigidbody>().AddForce(spawnPoint.transform.forward * bulletForce, ForceMode.Impulse);
+            
 
         }
     }

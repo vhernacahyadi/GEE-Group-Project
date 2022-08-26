@@ -596,6 +596,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7922839356875100597, guid: 8ec7169b698b4df4a9dff6aca07ceb6d,
+        type: 3}
+      propertyPath: bulletForce
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 7922839357311554869, guid: 8ec7169b698b4df4a9dff6aca07ceb6d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -620,6 +625,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922839357845415393, guid: 8ec7169b698b4df4a9dff6aca07ceb6d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.417
       objectReference: {fileID: 0}
     - target: {fileID: 8801263240780768026, guid: 8ec7169b698b4df4a9dff6aca07ceb6d,
         type: 3}
