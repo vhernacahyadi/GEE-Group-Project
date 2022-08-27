@@ -21,7 +21,7 @@ public class InteractCannon : Interactable
         Debug.Log("INTERACT!");
         gunAudio.Play();
 
-        Vector3 directiononOfFire = transform.up; // because the gun barrel (cylinder) has been rotated from vertical to horizontal
+        Vector3 directiononOfFire = transform.forward; // because the gun barrel (cylinder) has been rotated from vertical to horizontal
 
         if (Physics.Raycast(transform.position, directiononOfFire, out hitInfo, 100))
         {

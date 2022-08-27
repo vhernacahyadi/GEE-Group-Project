@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         {
             ObjectiveTextUI.text = "Interact with the Cannon to open the door";
             GameObject cannon = GameObject.Find("Cannon"); // Finds a game object by name
-            cannon.transform.position = new Vector3(cannon.transform.position.x, 3.5f, cannon.transform.position.z);
+            cannon.transform.position = new Vector3(cannon.transform.position.x, 3.3f, cannon.transform.position.z);
         }
 
         if (SceneManager.GetActiveScene().name == "Level 2")

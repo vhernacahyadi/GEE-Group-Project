@@ -14,13 +14,6 @@
       <FileName>Assets\Scripts\BulletScript.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DoorAnimation">
-    <Position X="7.25" Y="0.5" Width="2.25" />
-    <TypeIdentifier>
-      <HashCode>AAQAAAAAACAAIAAAAAAAAAAgAAAAAQAAAAAAACAAAAA=</HashCode>
-      <FileName>Assets\Scripts\DoorAnimation.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="GameManager">
     <Position X="13" Y="0.5" Width="2.25" />
     <TypeIdentifier>
@@ -35,11 +28,23 @@
       <FileName>Assets\Scripts\EndTrigger.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="gunShooter">
+  <Class Name="GunShooter">
     <Position X="15.75" Y="0.5" Width="2.25" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" ManuallyRouted="true">
+      <Path>
+        <Point X="11.75" Y="3.224" />
+        <Point X="11.917" Y="3.224" Type="JumpStart" />
+        <Point X="12.083" Y="3.224" Type="JumpEnd" />
+        <Point X="12.667" Y="3.224" Type="JumpStart" />
+        <Point X="12.833" Y="3.224" Type="JumpEnd" />
+        <Point X="14.042" Y="3.224" Type="JumpStart" />
+        <Point X="14.208" Y="3.224" Type="JumpEnd" />
+        <Point X="15.75" Y="3.224" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>IAQAAAAAICAACAAAAAAAAAAQAAAQAgABAAAAACAAAAA=</HashCode>
-      <FileName>Assets\Scripts\gunShooter.cs</FileName>
+      <FileName>Assets\Scripts\GunShooter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MovingPlatform">
@@ -66,7 +71,7 @@
   <Class Name="PlayerCollidePlatform">
     <Position X="26.75" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAQAACAAAAAAAAAAAEAAAAAAAAABAAAAAAAAAAE=</HashCode>
+      <HashCode>AAAAAAQAACAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAE=</HashCode>
       <FileName>Assets\Scripts\PlayerCollidePlatform.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -92,7 +97,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Score">
-    <Position X="10" Y="5" Width="2.25" />
+    <Position X="10" Y="7.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAQAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Score.cs</FileName>
@@ -175,15 +180,8 @@
       <FileName>Assets\Scripts\Interaction\TargetExplosion2.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="EnterName">
-    <Position X="7" Y="11.25" Width="2.25" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAgBAAAAAAQABAAAAAQQAAAAAAAAAAA=</HashCode>
-      <FileName>Assets\Scripts\UI Scripts\EnterName.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="GameOver">
-    <Position X="9.75" Y="11.25" Width="2.25" />
+    <Position X="7" Y="11.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAgAAAAAAAAAAEAAAAAA=</HashCode>
       <FileName>Assets\Scripts\UI Scripts\GameOver.cs</FileName>
@@ -192,11 +190,6 @@
   <Class Name="Leaderboard">
     <Position X="12.75" Y="11.25" Width="2.5" />
     <NestedTypes>
-      <Class Name="Leaderboard.HighscoreList" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Assets\Scripts\UI Scripts\Leaderboard.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Class>
       <Class Name="Leaderboard.Highscore" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>Assets\Scripts\UI Scripts\Leaderboard.cs</NewMemberFileName>
@@ -228,6 +221,31 @@
       <HashCode>ABQgAAAAAAAAAAAAAAAAAAAAAAAAAAABAABAACgAIAA=</HashCode>
       <FileName>Assets\Scripts\UI Scripts\PauseMenu.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="GameSession">
+    <Position X="9.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgBAAAAAAQABAAAAAQQAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI Scripts\GameSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VolumeSettings">
+    <Position X="24.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI Scripts\SettingsMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Doors">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAIQAAAAAAAAAACAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Assets\Scripts\Doors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityEngine.MonoBehaviour">
+    <Position X="10.25" Y="3" Width="1.5" />
+    <TypeIdentifier />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
