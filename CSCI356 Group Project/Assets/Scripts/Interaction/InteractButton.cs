@@ -16,7 +16,8 @@ public class InteractButton : Interactable
         Debug.Log("INTERACT!");
 
         // After click here
-        Destroy(Door);
+        Door.GetComponent<Doors>().Open();
+        //Destroy(Door);
         
     }
 }
