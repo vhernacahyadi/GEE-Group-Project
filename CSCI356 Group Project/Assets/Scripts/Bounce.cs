@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bounce : MonoBehaviour
 {
-    private float bounceHelight = 500;
+    private float bounceHelight = 300;
     private bool startTimer = false;
     GameObject rbBounce;
     Vector3 originalPosition;
