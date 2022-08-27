@@ -14,13 +14,6 @@
       <FileName>Assets\Scripts\BulletScript.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DoorAnimation">
-    <Position X="7.25" Y="0.5" Width="2.25" />
-    <TypeIdentifier>
-      <HashCode>AAQAAAAAACAAIAAAAAAAAAAgAAAAAQAAAAAAACAAAAA=</HashCode>
-      <FileName>Assets\Scripts\DoorAnimation.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="GameManager">
     <Position X="13" Y="0.5" Width="2.25" />
     <TypeIdentifier>
@@ -37,6 +30,18 @@
   </Class>
   <Class Name="GunShooter">
     <Position X="15.75" Y="0.5" Width="2.25" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" ManuallyRouted="true">
+      <Path>
+        <Point X="11.75" Y="3.224" />
+        <Point X="11.917" Y="3.224" Type="JumpStart" />
+        <Point X="12.083" Y="3.224" Type="JumpEnd" />
+        <Point X="12.667" Y="3.224" Type="JumpStart" />
+        <Point X="12.833" Y="3.224" Type="JumpEnd" />
+        <Point X="14.042" Y="3.224" Type="JumpStart" />
+        <Point X="14.208" Y="3.224" Type="JumpEnd" />
+        <Point X="15.75" Y="3.224" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>IAQAAAAAICAACAAAAAAAAAAQAAAQAgABAAAAACAAAAA=</HashCode>
       <FileName>Assets\Scripts\GunShooter.cs</FileName>
@@ -92,7 +97,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Score">
-    <Position X="10" Y="5" Width="2.25" />
+    <Position X="10" Y="7.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAQAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Score.cs</FileName>
@@ -230,6 +235,17 @@
       <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\UI Scripts\SettingsMenu.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="Doors">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAIQAAAAAAAAAACAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Assets\Scripts\Doors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityEngine.MonoBehaviour">
+    <Position X="10.25" Y="3" Width="1.5" />
+    <TypeIdentifier />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
