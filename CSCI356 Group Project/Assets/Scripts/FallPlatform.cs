@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-public class PlayerCollidePlatform : MonoBehaviour
+public class FallPlatform : MonoBehaviour
 {
-	[SerializeField] GameObject gameOverCamera;
-	[SerializeField] GameObject gameOverUI;
+	[SerializeField] private GameObject gameOverCamera;
+	[SerializeField] private GameObject gameOverUI;
+
 	// Start is called before the first frame update
 	void Start()
     {

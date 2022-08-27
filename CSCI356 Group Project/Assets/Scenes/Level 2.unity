@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: a90757fdc40ac2042ad9dbbe9d2a3f1b, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 8d669b9b9bfbfd44f84c3fa38f3ff219, type: 2}
 --- !u!1 &57217908
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,7 +1420,7 @@ GameObject:
   m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &383700256
 Transform:
@@ -3721,6 +3721,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fa15bd38e103f64f8109e7b3f2cbf87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverCamera: {fileID: 0}
+  gameOverUI: {fileID: 0}
 --- !u!1 &1587748173
 GameObject:
   m_ObjectHideFlags: 0
@@ -5438,6 +5440,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: cave
       objectReference: {fileID: 0}
+    - target: {fileID: 645833678505784411, guid: c01d3734610f5e4438369ab5be0a97cc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 879203245921234694, guid: c01d3734610f5e4438369ab5be0a97cc,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5553,6 +5560,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670057515511627651, guid: c01d3734610f5e4438369ab5be0a97cc,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.549322
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670057515511627651, guid: c01d3734610f5e4438369ab5be0a97cc,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5513506
       objectReference: {fileID: 0}
     - target: {fileID: 1670057515511627651, guid: c01d3734610f5e4438369ab5be0a97cc,
         type: 3}
