@@ -69,7 +69,7 @@ public class SlimeAI : MonoBehaviour
         audioSource.spatialBlend = 1.0f;
         audioSource.maxDistance = detectionRange;
 
-        audioSource.volume = 0.1f;
+        //audioSource.volume = 0.1f;
     }
 
     // Update is called once per frame

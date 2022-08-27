@@ -59,8 +59,8 @@ public class SlimeController : MonoBehaviour
         audioSource.spatialBlend = 1.0f;
         audioSource.maxDistance = detectionRange;
 
-        audioSource.volume = 0.1f;
-        audioSource2.volume = 0.1f;
+        //audioSource.volume = 0.1f;
+        //audioSource2.volume = 0.1f;
 
     }
 
