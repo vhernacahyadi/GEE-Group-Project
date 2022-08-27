@@ -35,11 +35,11 @@
       <FileName>Assets\Scripts\EndTrigger.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="gunShooter">
+  <Class Name="GunShooter">
     <Position X="15.75" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>IAQAAAAAICAACAAAAAAAAAAQAAAQAgABAAAAACAAAAA=</HashCode>
-      <FileName>Assets\Scripts\gunShooter.cs</FileName>
+      <FileName>Assets\Scripts\GunShooter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MovingPlatform">
@@ -66,7 +66,7 @@
   <Class Name="PlayerCollidePlatform">
     <Position X="26.75" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAQAACAAAAAAAAAAAEAAAAAAAAABAAAAAAAAAAE=</HashCode>
+      <HashCode>AAAAAAQAACAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAE=</HashCode>
       <FileName>Assets\Scripts\PlayerCollidePlatform.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -175,15 +175,8 @@
       <FileName>Assets\Scripts\Interaction\TargetExplosion2.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="EnterName">
-    <Position X="7" Y="11.25" Width="2.25" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAgBAAAAAAQABAAAAAQQAAAAAAAAAAA=</HashCode>
-      <FileName>Assets\Scripts\UI Scripts\EnterName.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="GameOver">
-    <Position X="9.75" Y="11.25" Width="2.25" />
+    <Position X="7" Y="11.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAgAAAAAAAAAAEAAAAAA=</HashCode>
       <FileName>Assets\Scripts\UI Scripts\GameOver.cs</FileName>
@@ -192,11 +185,6 @@
   <Class Name="Leaderboard">
     <Position X="12.75" Y="11.25" Width="2.5" />
     <NestedTypes>
-      <Class Name="Leaderboard.HighscoreList" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Assets\Scripts\UI Scripts\Leaderboard.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Class>
       <Class Name="Leaderboard.Highscore" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>Assets\Scripts\UI Scripts\Leaderboard.cs</NewMemberFileName>
@@ -227,6 +215,20 @@
     <TypeIdentifier>
       <HashCode>ABQgAAAAAAAAAAAAAAAAAAAAAAAAAAABAABAACgAIAA=</HashCode>
       <FileName>Assets\Scripts\UI Scripts\PauseMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameSession">
+    <Position X="9.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgBAAAAAAQABAAAAAQQAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI Scripts\GameSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VolumeSettings">
+    <Position X="24.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI Scripts\SettingsMenu.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
