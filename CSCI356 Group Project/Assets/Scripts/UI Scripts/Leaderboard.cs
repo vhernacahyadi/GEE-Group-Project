@@ -79,7 +79,7 @@ public class Leaderboard : MonoBehaviour
         scoreList.Sort((a, b) => b.Score - a.Score);
 
         // Take only top 10
-        scoreList.Take(10);
+        scoreList = scoreList.Take(10).ToList();
 
         // Save to player pref
         PlayerPrefs.SetString("Leaderboard", JsonConvert.SerializeObject(scoreList));
