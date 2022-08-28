@@ -13,6 +13,7 @@ public class VolumeSlider : MonoBehaviour
     {
         volumeCheck = GetComponent<AudioSource>();
         slider = GetComponent<Slider>();
+        slider.normalizedValue = AudioListener.volume;
         slider.onValueChanged.AddListener(delegate { SetUniversalVolume(); });
     }
 
