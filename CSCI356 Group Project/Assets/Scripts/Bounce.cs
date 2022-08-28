@@ -29,7 +29,7 @@ public class Bounce : MonoBehaviour
 
         if (other.gameObject.tag == "Player")
         {
-            rb.AddForce(Vector3.up * bounceHelight);
+            rb.AddForce(Vector3.up * bounceHelight, ForceMode.Impulse) ;
             startTimer = true;          
         }
         else

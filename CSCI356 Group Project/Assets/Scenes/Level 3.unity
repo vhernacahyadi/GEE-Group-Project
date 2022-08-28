@@ -2185,7 +2185,7 @@ PrefabInstance:
     - target: {fileID: 562673636303625381, guid: 89e3ff90da8284d4281d75081ad57839,
         type: 3}
       propertyPath: bounceHelight
-      value: 350
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 562673636303625383, guid: 89e3ff90da8284d4281d75081ad57839,
         type: 3}
@@ -3764,6 +3764,77 @@ MonoBehaviour:
   spawnRadius: 7
   spawnHeight: 0.5
   maxSpawn: 20
+--- !u!1 &872948560
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 872948563}
+  - component: {fileID: 872948562}
+  - component: {fileID: 872948561}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &872948561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872948560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c511db6d022a3c44cbb63a16524a858c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPrefab: {fileID: 8063317158961559684, guid: 420f7be94351ad445831f4c06df7c074,
+    type: 3}
+  startDelay: 45
+  interval: 0.5
+  spawnRadius: 7
+  spawnHeight: 3
+  maxSpawn: 30
+--- !u!114 &872948562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872948560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c511db6d022a3c44cbb63a16524a858c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPrefab: {fileID: 8063317158961559684, guid: 420f7be94351ad445831f4c06df7c074,
+    type: 3}
+  startDelay: 1
+  interval: 0.5
+  spawnRadius: 7
+  spawnHeight: 3
+  maxSpawn: 30
+--- !u!4 &872948563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872948560}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.9909334, y: 3.09, z: -3.97}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &897513340
 GameObject:
   m_ObjectHideFlags: 0
@@ -8217,25 +8288,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!114 &284843824319197028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6486215254074142775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c511db6d022a3c44cbb63a16524a858c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPrefab: {fileID: 8063317158961559684, guid: 420f7be94351ad445831f4c06df7c074,
-    type: 3}
-  startDelay: 1
-  interval: 0.5
-  spawnRadius: 7
-  spawnHeight: 3
-  maxSpawn: 20
 --- !u!1001 &562673634901236416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8251,7 +8303,7 @@ PrefabInstance:
     - target: {fileID: 562673636303625381, guid: 89e3ff90da8284d4281d75081ad57839,
         type: 3}
       propertyPath: bounceHelight
-      value: 350
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 562673636303625383, guid: 89e3ff90da8284d4281d75081ad57839,
         type: 3}
@@ -9251,7 +9303,6 @@ GameObject:
   - component: {fileID: 6486215254074142773}
   - component: {fileID: 6669651875536426653}
   - component: {fileID: 4776013602096515664}
-  - component: {fileID: 284843824319197028}
   m_Layer: 0
   m_Name: ground
   m_TagString: Ground

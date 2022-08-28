@@ -146,5 +146,5 @@ MonoBehaviour:
   jumpSound: {fileID: 8300000, guid: f54b43710f59d554b9391208ee23d0d4, type: 3}
   damageSound: {fileID: 8300000, guid: 5a7bed11ed53fa54587edca886c73a56, type: 3}
   detectionRange: 12
-  upForce: 10
+  upForce: 12
   runSpeed: 8

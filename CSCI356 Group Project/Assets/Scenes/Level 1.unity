@@ -837,12 +837,6 @@ MonoBehaviour:
   spawnRadius: 7
   spawnHeight: 0.5
   maxSpawn: 20
---- !u!4 &871001158 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1999708794050838479, guid: 39616e7982318de44b7a6e9591e00f3d,
-    type: 3}
-  m_PrefabInstance: {fileID: 996921559}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &996921559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1311,45 +1305,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1960933201
+--- !u!1 &1963217105 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1825457946, guid: 39616e7982318de44b7a6e9591e00f3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 996921559}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1960933202}
-  - component: {fileID: 1960933203}
-  m_Layer: 0
-  m_Name: SpawnPoint (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1960933202
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1960933201}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.68, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 871001158}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1960933203
+--- !u!114 &1963217108
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1960933201}
+  m_GameObject: {fileID: 1963217105}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c511db6d022a3c44cbb63a16524a858c, type: 3}
@@ -1357,7 +1325,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPrefab: {fileID: 6181021869800084321, guid: 9789059f7ce29bf4fb821934265e18c7,
     type: 3}
-  startDelay: 25
+  startDelay: 20
+  interval: 0.25
+  spawnRadius: 7
+  spawnHeight: 0.5
+  maxSpawn: 20
+--- !u!114 &1963217109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963217105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c511db6d022a3c44cbb63a16524a858c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPrefab: {fileID: 6181021869800084321, guid: 9789059f7ce29bf4fb821934265e18c7,
+    type: 3}
+  startDelay: 40
   interval: 0.25
   spawnRadius: 7
   spawnHeight: 0.5
