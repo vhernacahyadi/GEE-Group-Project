@@ -25,7 +25,14 @@ public class VolumeSlider : MonoBehaviour
 
     private void SetUniversalVolume()
     {
+        // Set volume
         AudioListener.volume = slider.normalizedValue;
+
+        // Save to PlayerPrefs
+        PlayerPrefs.SetFloat("Volume", AudioListener.volume);
+        PlayerPrefs.Save();
+
+        // Play audio clip
         volumeCheck.Play();
     }
 }
