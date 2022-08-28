@@ -2185,7 +2185,7 @@ PrefabInstance:
     - target: {fileID: 562673636303625381, guid: 89e3ff90da8284d4281d75081ad57839,
         type: 3}
       propertyPath: bounceHelight
-      value: 400
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 562673636303625383, guid: 89e3ff90da8284d4281d75081ad57839,
         type: 3}
@@ -7850,7 +7850,7 @@ PrefabInstance:
     - target: {fileID: 1627408539291610228, guid: 591c2cc9d9adbf04b8bedc72c28e8977,
         type: 3}
       propertyPath: TimeLeft
-      value: 120
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 3097243002740925738, guid: 591c2cc9d9adbf04b8bedc72c28e8977,
         type: 3}
@@ -8234,7 +8234,7 @@ MonoBehaviour:
   startDelay: 1
   interval: 0.5
   spawnRadius: 7
-  spawnHeight: 0.5
+  spawnHeight: 3
   maxSpawn: 20
 --- !u!1001 &562673634901236416
 PrefabInstance:
@@ -8247,6 +8247,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bouncing(trampoline)
+      objectReference: {fileID: 0}
+    - target: {fileID: 562673636303625381, guid: 89e3ff90da8284d4281d75081ad57839,
+        type: 3}
+      propertyPath: bounceHelight
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 562673636303625383, guid: 89e3ff90da8284d4281d75081ad57839,
         type: 3}
@@ -8463,7 +8468,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 12.283926, y: 9.313397, z: 0.1}
-  m_Center: {x: -0.06871033, y: -0.30874348, z: 0.31601146}
+  m_Center: {x: -0.06871033, y: -0.30874348, z: 0.5}
 --- !u!1 &6486215252100568136
 GameObject:
   m_ObjectHideFlags: 0
@@ -9433,7 +9438,7 @@ MeshCollider:
   m_GameObject: {fileID: 6486215254074142775}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
