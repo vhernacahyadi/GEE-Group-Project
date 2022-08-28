@@ -5388,6 +5388,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d954de1f69032490fa78942e035856f3, type: 2}
+    - target: {fileID: 1501177894084821061, guid: c01d3734610f5e4438369ab5be0a97cc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1501177894084821065, guid: c01d3734610f5e4438369ab5be0a97cc,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5401,7 +5406,7 @@ PrefabInstance:
     - target: {fileID: 1501177894084821067, guid: c01d3734610f5e4438369ab5be0a97cc,
         type: 3}
       propertyPath: spawnHeight
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1501177894084821067, guid: c01d3734610f5e4438369ab5be0a97cc,
         type: 3}
