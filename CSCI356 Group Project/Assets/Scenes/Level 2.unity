@@ -5395,6 +5395,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1501177894084821067, guid: c01d3734610f5e4438369ab5be0a97cc,
         type: 3}
+      propertyPath: maxSpawn
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501177894084821067, guid: c01d3734610f5e4438369ab5be0a97cc,
+        type: 3}
       propertyPath: spawnHeight
       value: 2
       objectReference: {fileID: 0}
@@ -6040,7 +6045,7 @@ PrefabInstance:
     - target: {fileID: 1627408539291610228, guid: 591c2cc9d9adbf04b8bedc72c28e8977,
         type: 3}
       propertyPath: TimeLeft
-      value: 120
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 1627408539540063488, guid: 591c2cc9d9adbf04b8bedc72c28e8977,
         type: 3}
