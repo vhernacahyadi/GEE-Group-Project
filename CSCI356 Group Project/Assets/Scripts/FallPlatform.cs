@@ -13,7 +13,7 @@ public class FallPlatform : MonoBehaviour
 
     void OnCollisionStay(Collision cls)
 	{
-		if (cls.gameObject.name == "level")
+		if (cls.gameObject.tag == "Player")
 		{
 			if (SceneManager.GetActiveScene().name == "Level 2")
 			{
