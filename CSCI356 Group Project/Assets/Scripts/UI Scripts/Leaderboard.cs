@@ -39,6 +39,16 @@ public class Leaderboard : MonoBehaviour
         if (scoreList == null)
         {
             scoreList = new List<Highscore>();
+            scoreList.Add(new Highscore("Abc", 0));
+            scoreList.Add(new Highscore("Abc", 0));
+            scoreList.Add(new Highscore("Abc", 0));
+            scoreList.Add(new Highscore("Abc", 0));
+            scoreList.Add(new Highscore("Abc", 0));
+            scoreList.Add(new Highscore("Abc", 0));
+            scoreList.Add(new Highscore("Abc", 0));
+            scoreList.Add(new Highscore("Abc", 0));
+            scoreList.Add(new Highscore("Abc", 0));
+            scoreList.Add(new Highscore("Abc", 0));
         }
 
         //Debug.Log("Prefs " + PlayerPrefs.GetString("Leaderboard"));
