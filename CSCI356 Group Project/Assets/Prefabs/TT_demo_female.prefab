@@ -9873,7 +9873,7 @@ MonoBehaviour:
     type: 3}
   playerCamera: {fileID: 7922839357799303596}
   spawnPoint: {fileID: 7922839357845415393}
-  bulletForce: 200
+  bulletForce: 40
   gunShootClip: {fileID: 8300000, guid: 4e8ba64cc738a134b9b9e778b97e81df, type: 3}
 --- !u!114 &7922839356875100596
 MonoBehaviour:
