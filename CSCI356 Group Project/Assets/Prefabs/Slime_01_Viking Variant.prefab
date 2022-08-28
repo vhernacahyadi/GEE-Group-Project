@@ -164,14 +164,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c2fd55162f89947bb1bfa7aca521e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
-  point: 5
+  health: 2
+  point: 8
   damageSound: {fileID: 8300000, guid: 5a7bed11ed53fa54587edca886c73a56, type: 3}
   detectionRange: 15
   runSpeed: 10
   normalSpeed: 3
   offCourseInterval: 0.1
   onCourseInterval: 1.5
-  escapePoints:
-  - {fileID: 0}
-  - {fileID: 0}

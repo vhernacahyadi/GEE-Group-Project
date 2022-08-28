@@ -15,7 +15,7 @@ public class Bounce : MonoBehaviour
     void Start()
     {
         rbBounce = GameObject.FindWithTag("Bounce");
-        Debug.Log("going bounce");
+        //Debug.Log("going bounce");
         originalPosition = rbBounce.transform.position;
         desiredPosition = new Vector3(rbBounce.transform.position.x, rbBounce.transform.position.y * 2, rbBounce.transform.position.z);
         delay = 0.1f;
@@ -39,20 +39,19 @@ public class Bounce : MonoBehaviour
     }
     void Update()
     {
-        Debug.LogWarning(startTimer);
+        //Debug.LogWarning(startTimer);
         // when timer starts, increment timer
         if (startTimer)
         {
             if(timer < delay)
             {
-                Debug.LogWarning(timer);
+                //Debug.LogWarning(timer);
                 timer += Time.deltaTime;
                 rbBounce.transform.position = Vector3.MoveTowards(rbBounce.transform.position, desiredPosition, 5 * Time.deltaTime);
 
             }
             else
             {
-                Debug.LogWarning("yea");
                 // Debug.LogWarning("after 10 sec");
                 rbBounce.transform.position = Vector3.MoveTowards(rbBounce.transform.position, originalPosition, 5 * Time.deltaTime);
                
@@ -64,7 +63,6 @@ public class Bounce : MonoBehaviour
 
             if (rbBounce.transform.position == originalPosition)
             {
-                Debug.LogWarning("yeaaaa");
                 startTimer = false;
                 timer = 0;
             }

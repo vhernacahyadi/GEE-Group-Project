@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2185,7 +2185,7 @@ PrefabInstance:
     - target: {fileID: 562673636303625381, guid: 89e3ff90da8284d4281d75081ad57839,
         type: 3}
       propertyPath: bounceHelight
-      value: 400
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 562673636303625383, guid: 89e3ff90da8284d4281d75081ad57839,
         type: 3}
@@ -7850,7 +7850,7 @@ PrefabInstance:
     - target: {fileID: 1627408539291610228, guid: 591c2cc9d9adbf04b8bedc72c28e8977,
         type: 3}
       propertyPath: TimeLeft
-      value: 120
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 3097243002740925738, guid: 591c2cc9d9adbf04b8bedc72c28e8977,
         type: 3}
@@ -8248,6 +8248,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bouncing(trampoline)
       objectReference: {fileID: 0}
+    - target: {fileID: 562673636303625381, guid: 89e3ff90da8284d4281d75081ad57839,
+        type: 3}
+      propertyPath: bounceHelight
+      value: 350
+      objectReference: {fileID: 0}
     - target: {fileID: 562673636303625383, guid: 89e3ff90da8284d4281d75081ad57839,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -8460,10 +8465,10 @@ BoxCollider:
   m_GameObject: {fileID: 6486215254074142775}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 12.283926, y: 9.313397, z: 0.1}
-  m_Center: {x: -0.06871033, y: 0, z: 0.31601146}
+  m_Center: {x: -0.06871033, y: -0.30874348, z: 0.5}
 --- !u!1 &6486215252100568136
 GameObject:
   m_ObjectHideFlags: 0
@@ -9433,7 +9438,7 @@ MeshCollider:
   m_GameObject: {fileID: 6486215254074142775}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
