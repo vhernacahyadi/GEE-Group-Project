@@ -185,21 +185,26 @@ public class SlimeController : MonoBehaviour
         //}
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Projectile" && animator.GetBool("Dying") == false && player != null)
-        {
-            // Face the player
-            Vector3 vectorToPlayer = player.transform.position - transform.position;
-            vectorToPlayer.y = 0;
-            transform.rotation = Quaternion.LookRotation(vectorToPlayer);
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.tag == "Projectile" && animator.GetBool("Dying") == false && player != null)
+    //    {
+    //        // Face the player
+    //        Vector3 vectorToPlayer = player.transform.position - transform.position;
+    //        vectorToPlayer.y = 0;
+    //        transform.rotation = Quaternion.LookRotation(vectorToPlayer);
 
-            Damage();
-        }
-    }
+    //        Damage();
+    //    }
+    //}
 
     public void Damage()
     {
+        // Face the player
+        Vector3 vectorToPlayer = player.transform.position - transform.position;
+        vectorToPlayer.y = 0;
+        transform.rotation = Quaternion.LookRotation(vectorToPlayer);
+
         // Reduce health
         health--;
 

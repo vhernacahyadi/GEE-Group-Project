@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8234,7 +8234,7 @@ MonoBehaviour:
   startDelay: 1
   interval: 0.5
   spawnRadius: 7
-  spawnHeight: 0.5
+  spawnHeight: 3
   maxSpawn: 20
 --- !u!1001 &562673634901236416
 PrefabInstance:
@@ -8460,10 +8460,10 @@ BoxCollider:
   m_GameObject: {fileID: 6486215254074142775}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 12.283926, y: 9.313397, z: 0.1}
-  m_Center: {x: -0.06871033, y: -0.30874348, z: 0.31601146}
+  m_Center: {x: -0.06871033, y: 0, z: 0.31601146}
 --- !u!1 &6486215252100568136
 GameObject:
   m_ObjectHideFlags: 0

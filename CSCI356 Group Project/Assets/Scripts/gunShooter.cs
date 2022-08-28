@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GunShooter : MonoBehaviour
 {
@@ -33,17 +34,29 @@ public class GunShooter : MonoBehaviour
             if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit))
             {
                 spawnPoint.transform.LookAt(hit.point);
-            }
 
+                // If hitting target
+                if (hit.transform.tag == "Target")
+                {
+                    if (SceneManager.GetActiveScene().name == "Level 2")
+                    {
+                        hit.transform.gameObject.GetComponent<SlimeAI>().Damage();
+                    }
+                    else
+                    {
+                        hit.transform.gameObject.GetComponent<SlimeController>().Damage();
+                    }
+                }
+            }
 
             //Spawn bullet
             gunAudio.PlayOneShot(gunShootClip);
             GameObject newBulletPrefab = GameObject.Instantiate(bulletPrefab, spawnPoint.transform.position, Quaternion.identity);
             newBulletPrefab.GetComponent<Rigidbody>().AddForce(spawnPoint.transform.forward * bulletForce, ForceMode.Impulse);
-            
+
 
         }
     }
 
-    
+
 }
