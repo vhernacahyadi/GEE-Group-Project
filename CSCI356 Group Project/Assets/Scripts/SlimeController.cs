@@ -83,7 +83,7 @@ public class SlimeController : MonoBehaviour
                 transform.Rotate(0, Random.Range(-20, 20), 0, Space.Self); // add some randomness
 
                 // Jump
-                Vector3 jump = transform.forward.normalized * runSpeed;
+                Vector3 jump = transform.forward * runSpeed;
                 jump.y = upForce;
                 rb.AddForce(jump, ForceMode.Impulse);
 
@@ -106,7 +106,7 @@ public class SlimeController : MonoBehaviour
                 transform.Rotate(0, Random.Range(-20, 20), 0, Space.Self); // add some randomness
 
                 // Jump
-                Vector3 jump = transform.forward.normalized;
+                Vector3 jump = transform.forward;
                 if (toSpawnPoint.magnitude > runSpeed) // if spawn point is far, add speed
                     jump *= runSpeed;
                 jump.y = upForce;
@@ -124,7 +124,7 @@ public class SlimeController : MonoBehaviour
                 transform.Rotate(0, Random.Range(0, 360), 0, Space.Self); // random orientation
 
                 // Jump
-                Vector3 jump = transform.forward.normalized;
+                Vector3 jump = transform.forward;
                 jump.y = upForce;
                 rb.AddForce(jump, ForceMode.Impulse);
 
@@ -149,7 +149,7 @@ public class SlimeController : MonoBehaviour
             transform.Rotate(0, Random.Range(-90, 90), 0, Space.Self); // add some randomness
 
             // Jump
-            Vector3 jump = transform.forward.normalized;
+            Vector3 jump = transform.forward;
             jump.y = isJumping ? 0 : 1.0f;
             rb.AddForce(jump, ForceMode.Impulse);
 
@@ -177,7 +177,7 @@ public class SlimeController : MonoBehaviour
         transform.Rotate(0, Random.Range(-90, 90), 0, Space.Self); // add some randomness
 
         // Jump
-        Vector3 jump = transform.forward.normalized;
+        Vector3 jump = transform.forward;
         jump.y = 1.0f;
         rb.AddForce(jump, ForceMode.Impulse);
 
