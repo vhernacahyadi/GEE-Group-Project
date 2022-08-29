@@ -185,7 +185,11 @@ public class SlimeAI : MonoBehaviour
                 agent.SetDestination(currentEscapePoint);
 
                 isOffCourse = false;
-                yield return new WaitForSeconds(onCourseInterval);
+
+                if (isRunning)
+                    yield return new WaitForSeconds(onCourseInterval);
+                else
+                    yield return new WaitForSeconds(onCourseInterval * runSpeed / normalSpeed);
             }
 
         }
