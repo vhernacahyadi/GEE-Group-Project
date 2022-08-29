@@ -107,7 +107,7 @@ NavMeshSettings:
     serializedVersion: 2
     agentTypeID: 0
     agentRadius: 0.5
-    agentHeight: 0.7
+    agentHeight: 0.8
     agentSlope: 60
     agentClimb: 0.4
     ledgeDropHeight: 0
@@ -423,7 +423,7 @@ PrefabInstance:
     - target: {fileID: 8100298169919513728, guid: 0f436f11e5f6a4746ad0ef93dc760583,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -42.96
+      value: -43.36
       objectReference: {fileID: 0}
     - target: {fileID: 8100298169919513728, guid: 0f436f11e5f6a4746ad0ef93dc760583,
         type: 3}
@@ -3652,7 +3652,7 @@ PrefabInstance:
     - target: {fileID: 4851255754983601791, guid: f5df276ca8db56049849b11899004d48,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.132559
+      value: -27.72
       objectReference: {fileID: 0}
     - target: {fileID: 4851255754983601791, guid: f5df276ca8db56049849b11899004d48,
         type: 3}
@@ -5771,6 +5771,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3456379394846091370, guid: c01d3734610f5e4438369ab5be0a97cc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.41
       objectReference: {fileID: 0}
     - target: {fileID: 3683343311111817282, guid: c01d3734610f5e4438369ab5be0a97cc,
         type: 3}

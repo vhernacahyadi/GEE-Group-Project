@@ -170,6 +170,6 @@ MonoBehaviour:
   detectionRange: 15
   runSpeed: 10
   normalSpeed: 3
-  offCourseInterval: 0.1
+  offCourseInterval: 0.2
   onCourseInterval: 1.5
   escapePoints: []
