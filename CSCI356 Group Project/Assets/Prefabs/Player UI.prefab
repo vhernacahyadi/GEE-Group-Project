@@ -768,7 +768,6 @@ GameObject:
   - component: {fileID: 1260456878}
   - component: {fileID: 1260456881}
   - component: {fileID: 1260456880}
-  - component: {fileID: 3866599166107900446}
   m_Layer: 5
   m_Name: LevelComplete
   m_TagString: Untagged
@@ -868,20 +867,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb594c2f947186040aca563de711f387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3866599166107900446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260456876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 885a1ff9f735e1b4a997a5ba62dfb878, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CompleteLevelUI: {fileID: 0}
-  ObjectiveTextUI: {fileID: 0}
 --- !u!1 &1267010538
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,7 +1440,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dc4884cef84d024b8ed01b0b4e70776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   scoreText: {fileID: 1627408539540063489}
 --- !u!1 &3866599166683220769
 GameObject:
