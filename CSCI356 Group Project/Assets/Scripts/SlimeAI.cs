@@ -29,12 +29,14 @@ public class SlimeAI : MonoBehaviour
     [SerializeField]
     private float onCourseInterval = 2.0f;
 
+    [SerializeField]
+    private GameObject[] escapePoints;
+
     private GameManager gameManager;
     private Animator animator;
     private GameObject player;
     private AudioSource audioSource;
     private NavMeshAgent agent;
-    private GameObject[] escapePoints;
     private Vector3 currentEscapePoint;
     private bool isRunning;
 
@@ -45,13 +47,12 @@ public class SlimeAI : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-        escapePoints = GameObject.FindGameObjectsWithTag("EscapePoint");
         agent.acceleration = 10000.0f;
         isRunning = false;
 
         if (escapePoints.Length == 0)
         {
-            Debug.LogError("No escape points found in scene.");
+            Debug.LogError("No escape points assigned.");
         }
 
         SetEscapeDest();
@@ -61,15 +62,10 @@ public class SlimeAI : MonoBehaviour
 
         // Audio
         audioSource = gameObject.AddComponent<AudioSource>();
-
         audioSource.playOnAwake = false;
-
         audioSource.clip = damageSound;
-
         audioSource.spatialBlend = 1.0f;
         audioSource.maxDistance = detectionRange;
-
-        //audioSource.volume = 0.1f;
     }
 
     // Update is called once per frame
