@@ -148,8 +148,10 @@ public class SlimeController : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(contactToSlime);
             transform.Rotate(0, Random.Range(-90, 90), 0, Space.Self); // add some randomness
 
+            Vector3 playerToSlime = transform.position - player.transform.position;
+
             // Jump
-            Vector3 jump = transform.forward;
+            Vector3 jump = playerToSlime.magnitude < detectionRange ? transform.forward * runSpeed : transform.forward;
             jump.y = isJumping ? 0 : 1.0f;
             rb.AddForce(jump, ForceMode.Impulse);
 
