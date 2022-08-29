@@ -157,7 +157,7 @@ public class SlimeAI : MonoBehaviour
             if (!isOffCourse)
             {
                 // Set random
-                transform.Rotate(0, Random.Range(-80, 80), 0);
+                transform.Rotate(0, Random.Range(-70, 70), 0);
 
                 RaycastHit hitInfo;
                 bool isHit = Physics.Raycast(transform.position, transform.forward, out hitInfo, maxDistance: 20.0f);
