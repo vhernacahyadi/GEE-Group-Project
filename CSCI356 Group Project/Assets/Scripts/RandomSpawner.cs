@@ -54,6 +54,7 @@ public class RandomSpawner : MonoBehaviour
             
             // Instantiate at random position
             GameObject newObject = Instantiate(spawnPrefab, randomPos, Quaternion.LookRotation(Vector3.forward, Vector3.up));
+            newObject.SetActive(true);
 
             // Increment count
             currentCount++;
