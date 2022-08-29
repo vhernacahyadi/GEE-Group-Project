@@ -164,8 +164,6 @@ public class SlimeController : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        //if (collision.collider.CompareTag("Boundary"))
-        //{
         // Play jump sound
         audioSource.Play();
 
@@ -182,7 +180,6 @@ public class SlimeController : MonoBehaviour
         rb.AddForce(jump, ForceMode.Impulse);
 
         isJumping = true;
-        //}
     }
 
     //private void OnTriggerEnter(Collider other)
