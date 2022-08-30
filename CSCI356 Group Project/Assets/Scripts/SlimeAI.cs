@@ -195,19 +195,6 @@ public class SlimeAI : MonoBehaviour
         }
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.tag == "Projectile" && animator.GetBool("Dying") == false && player != null)
-    //    {
-    //        // Face the player
-    //        Vector3 vectorToPlayer = player.transform.position - transform.position;
-    //        vectorToPlayer.y = 0;
-    //        transform.rotation = Quaternion.LookRotation(vectorToPlayer);
-
-    //        Damage();
-    //    }
-    //}
-
     public void Damage()
     {
         // Face the player

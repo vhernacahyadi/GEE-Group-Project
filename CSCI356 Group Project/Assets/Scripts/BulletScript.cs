@@ -10,7 +10,7 @@ public class BulletScript : MonoBehaviour
         
     }
 
-    //destroy bullet after hitting a wall, floor or slime
+    // Destroy bullet after hitting a wall, floor or slime
     private void OnTriggerEnter(Collider other)
     {
         Destroy(transform.gameObject);

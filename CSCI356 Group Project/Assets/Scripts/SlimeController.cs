@@ -58,14 +58,9 @@ public class SlimeController : MonoBehaviour
 
         audioSource.spatialBlend = 1.0f;
         audioSource.maxDistance = detectionRange;
-
-        //audioSource.volume = 0.1f;
-        //audioSource2.volume = 0.1f;
-
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (isJumping == false && animator.GetBool("Damaged") == false && animator.GetBool("Dying") == false && player != null)
         {
@@ -184,19 +179,6 @@ public class SlimeController : MonoBehaviour
         isJumping = true;
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.tag == "Projectile" && animator.GetBool("Dying") == false && player != null)
-    //    {
-    //        // Face the player
-    //        Vector3 vectorToPlayer = player.transform.position - transform.position;
-    //        vectorToPlayer.y = 0;
-    //        transform.rotation = Quaternion.LookRotation(vectorToPlayer);
-
-    //        Damage();
-    //    }
-    //}
-
     public void Damage()
     {
         // Face the player
@@ -212,7 +194,7 @@ public class SlimeController : MonoBehaviour
             // Increment the score in the GameManager when the slime is damaged
             if (gameManager != null)
             {
-                gameManager.AddScore((int)point);
+                gameManager.AddScore(point);
             }
 
             // Play damaged sound

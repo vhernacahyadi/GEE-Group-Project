@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static int currentScore = GameSession.Score;
-   // public static int bulletAmount = 20;
 
     public GameObject CompleteLevelUI;
     public Text ObjectiveTextUI;

@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class Bounce : MonoBehaviour
 {
-    [SerializeField] private float bounceHelight = 400;
+    [SerializeField] private float bounceHeight = 10;
     private bool startTimer = false;
-    GameObject rbBounce;
-    Vector3 originalPosition;
-    Vector3 desiredPosition;
-    float delay, timer;
-
- 
+    private GameObject rbBounce;
+    private Vector3 originalPosition;
+    private Vector3 desiredPosition;
+    private float delay, timer;
+    
     void Start()
     {
         rbBounce = GameObject.FindWithTag("Bounce");
@@ -29,7 +28,7 @@ public class Bounce : MonoBehaviour
 
         if (other.gameObject.tag == "Player")
         {
-            rb.AddForce(Vector3.up * bounceHelight, ForceMode.Impulse) ;
+            rb.AddForce(Vector3.up * bounceHeight, ForceMode.Impulse) ;
             startTimer = true;          
         }
         else
@@ -54,8 +53,6 @@ public class Bounce : MonoBehaviour
             {
                 // Debug.LogWarning("after 10 sec");
                 rbBounce.transform.position = Vector3.MoveTowards(rbBounce.transform.position, originalPosition, 5 * Time.deltaTime);
-               
-
                 
                 // rbBounce.transform.position = originalPosition * Time.deltaTime;
 

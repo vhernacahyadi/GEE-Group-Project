@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Doors : MonoBehaviour {
+public class Doors : MonoBehaviour
+{
     Animator doorAnim;
     bool doorOpen;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         doorOpen = false;
         doorAnim = GetComponent<Animator>();
-	}
+    }
 
     public void Open()
     {
