@@ -33,6 +33,7 @@ public class SlimeAI : MonoBehaviour
     private GameObject[] escapePoints;
 
     private GameManager gameManager;
+    private Collider col;
     private Animator animator;
     private GameObject player;
     private AudioSource audioSource;
@@ -45,6 +46,7 @@ public class SlimeAI : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
         player = GameObject.FindWithTag("Player");
+        col = GetComponent<Collider>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         isRunning = false;
@@ -217,6 +219,7 @@ public class SlimeAI : MonoBehaviour
 
             // Play dying animation
             animator.SetBool("Dying", true);
+            col.enabled = false;
         }
         else
         {
