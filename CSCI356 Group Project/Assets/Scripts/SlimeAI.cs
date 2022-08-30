@@ -47,7 +47,6 @@ public class SlimeAI : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-        agent.acceleration = 10000.0f;
         isRunning = false;
 
         if (escapePoints.Length == 0)
