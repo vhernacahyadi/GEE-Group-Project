@@ -9,7 +9,7 @@ public class PlatformAttachPlayer : MonoBehaviour
     {
         if (collision.gameObject.tag=="Player")
         {
-            collision.gameObject.transform.SetParent(transform);
+            collision.gameObject.transform.SetParent(transform.parent);
         }
     }
 
