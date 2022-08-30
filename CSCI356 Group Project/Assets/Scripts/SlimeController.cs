@@ -29,6 +29,7 @@ public class SlimeController : MonoBehaviour
     private GameManager gameManager;
     private GameObject player;
     private Rigidbody rb;
+    private Collider col;
     private AudioSource audioSource;
     private AudioSource audioSource2;
 
@@ -41,6 +42,7 @@ public class SlimeController : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         player = GameObject.FindWithTag("Player");
         rb = GetComponent<Rigidbody>();
+        col = GetComponent<Collider>();
         animator = GetComponent<Animator>();
 
         spawnPos = transform.position;
@@ -202,6 +204,7 @@ public class SlimeController : MonoBehaviour
 
             // Play dying animation
             animator.SetBool("Dying", true);
+            col.enabled = false;
         }
         else
         {
