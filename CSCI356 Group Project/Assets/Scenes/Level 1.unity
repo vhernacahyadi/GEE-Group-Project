@@ -287,12 +287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &135420785 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7922839357845415393, guid: 8ec7169b698b4df4a9dff6aca07ceb6d,
-    type: 3}
-  m_PrefabInstance: {fileID: 707122363}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &576313676 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1627408539162867945, guid: 591c2cc9d9adbf04b8bedc72c28e8977,
@@ -1010,24 +1004,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 707122363}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1227795368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227795359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fb68a6b3ce74fe45835f051b3c3a24c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 3699631060574597481, guid: 51df43c78beb979439ac999a85cc61ab,
-    type: 3}
-  playerCamera: {fileID: 1871971604}
-  spawnPoint: {fileID: 135420785}
-  bulletForce: 40
-  gunShootClip: {fileID: 8300000, guid: 4e8ba64cc738a134b9b9e778b97e81df, type: 3}
 --- !u!1 &1260456876 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1260456876, guid: 591c2cc9d9adbf04b8bedc72c28e8977,
@@ -1277,12 +1253,6 @@ PrefabInstance:
 --- !u!1 &1871971601 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7922839357799303599, guid: 8ec7169b698b4df4a9dff6aca07ceb6d,
-    type: 3}
-  m_PrefabInstance: {fileID: 707122363}
-  m_PrefabAsset: {fileID: 0}
---- !u!20 &1871971604 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 7922839357799303596, guid: 8ec7169b698b4df4a9dff6aca07ceb6d,
     type: 3}
   m_PrefabInstance: {fileID: 707122363}
   m_PrefabAsset: {fileID: 0}
