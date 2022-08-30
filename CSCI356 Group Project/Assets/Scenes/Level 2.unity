@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -845,6 +845,12 @@ PrefabInstance:
 --- !u!1 &186821006 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7922839357799303599, guid: 8ec7169b698b4df4a9dff6aca07ceb6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7922839357135261958}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &186821009 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7922839357799303596, guid: 8ec7169b698b4df4a9dff6aca07ceb6d,
     type: 3}
   m_PrefabInstance: {fileID: 7922839357135261958}
   m_PrefabAsset: {fileID: 0}
@@ -2069,6 +2075,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &777277423 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7922839357845415393, guid: 8ec7169b698b4df4a9dff6aca07ceb6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7922839357135261958}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &784497317
 GameObject:
   m_ObjectHideFlags: 0
@@ -3717,6 +3729,24 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7922839357135261958}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1587343516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587343507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fb68a6b3ce74fe45835f051b3c3a24c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 3699631060574597481, guid: 51df43c78beb979439ac999a85cc61ab,
+    type: 3}
+  playerCamera: {fileID: 186821009}
+  spawnPoint: {fileID: 777277423}
+  bulletForce: 40
+  gunShootClip: {fileID: 8300000, guid: 4e8ba64cc738a134b9b9e778b97e81df, type: 3}
 --- !u!1 &1587748173
 GameObject:
   m_ObjectHideFlags: 0
