@@ -32,7 +32,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(transform.parent);
         mvX = Input.GetAxis("Horizontal") * Time.deltaTime * Speed;
         mvZ = Input.GetAxis("Vertical") * Time.deltaTime * Speed;
 
@@ -68,7 +67,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //Debug.Log(isGrounded);
         if (onIce)
         {
             rb.AddForce((transform.forward * mvZ + transform.right * mvX).normalized * 0.2f, ForceMode.Impulse);

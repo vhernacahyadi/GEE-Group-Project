@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1048,6 +1048,18 @@ Transform:
   m_Father: {fileID: 753935836}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &230608091 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4641390332428257139, guid: 591c2cc9d9adbf04b8bedc72c28e8977,
+    type: 3}
+  m_PrefabInstance: {fileID: 3866599165704049577}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &245932748
 GameObject:
   m_ObjectHideFlags: 0
@@ -2691,18 +2703,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2139393236}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1122796249 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1098628671, guid: 591c2cc9d9adbf04b8bedc72c28e8977,
-    type: 3}
-  m_PrefabInstance: {fileID: 3866599165704049577}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1124055915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4894,7 +4894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CompleteLevelUI: {fileID: 1219901258}
-  ObjectiveTextUI: {fileID: 1122796249}
+  ObjectiveTextUI: {fileID: 230608091}
 --- !u!4 &1889636364
 Transform:
   m_ObjectHideFlags: 0
@@ -4908,7 +4908,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1943580877
 GameObject:
@@ -6115,7 +6115,7 @@ PrefabInstance:
     - target: {fileID: 2296669433656741553, guid: 027e4fd8768988a4cb4095f4665817b7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2296669433656741553, guid: 027e4fd8768988a4cb4095f4665817b7,
         type: 3}

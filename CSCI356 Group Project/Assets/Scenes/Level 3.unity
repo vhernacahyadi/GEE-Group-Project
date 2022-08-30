@@ -3191,8 +3191,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fa15bd38e103f64f8109e7b3f2cbf87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverCamera: {fileID: 0}
-  gameOverUI: {fileID: 0}
 --- !u!1 &707122366 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7922839357799303599, guid: 8ec7169b698b4df4a9dff6aca07ceb6d,
@@ -7937,7 +7935,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 591c2cc9d9adbf04b8bedc72c28e8977, type: 3}
 --- !u!114 &2068392815 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1098628671, guid: 591c2cc9d9adbf04b8bedc72c28e8977,
+  m_CorrespondingSourceObject: {fileID: 4641390332428257139, guid: 591c2cc9d9adbf04b8bedc72c28e8977,
     type: 3}
   m_PrefabInstance: {fileID: 2068392814}
   m_PrefabAsset: {fileID: 0}

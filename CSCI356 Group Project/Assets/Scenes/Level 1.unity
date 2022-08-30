@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -258,6 +258,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1227795359}
+    - target: {fileID: 2772720789856609660, guid: 591c2cc9d9adbf04b8bedc72c28e8977,
+        type: 3}
+      propertyPath: m_Name
+      value: Objective Text
+      objectReference: {fileID: 0}
     - target: {fileID: 3097243002740925738, guid: 591c2cc9d9adbf04b8bedc72c28e8977,
         type: 3}
       propertyPath: player
@@ -272,7 +277,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 591c2cc9d9adbf04b8bedc72c28e8977, type: 3}
 --- !u!114 &51896640 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1098628671, guid: 591c2cc9d9adbf04b8bedc72c28e8977,
+  m_CorrespondingSourceObject: {fileID: 4641390332428257139, guid: 591c2cc9d9adbf04b8bedc72c28e8977,
     type: 3}
   m_PrefabInstance: {fileID: 51896639}
   m_PrefabAsset: {fileID: 0}

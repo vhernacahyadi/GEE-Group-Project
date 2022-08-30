@@ -27,7 +27,6 @@ public class RotationController : MonoBehaviour
         character.transform.Rotate(0, mouseMove.x, 0);
 
         //Rotate the caamera vertically
-        Debug.Log(transform.rotation.eulerAngles);
         if (transform.rotation.eulerAngles.x <= 40 || transform.rotation.eulerAngles.x >= 310)
             transform.Rotate(-mouseMove.y, 0, 0);
         else if(transform.rotation.eulerAngles.x > 40 && transform.rotation.eulerAngles.x < 100)
