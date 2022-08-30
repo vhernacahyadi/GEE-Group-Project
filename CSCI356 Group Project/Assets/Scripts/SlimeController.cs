@@ -132,7 +132,7 @@ public class SlimeController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Jump again if collide with wall or other slimes
-        if ((collision.collider.CompareTag("Boundary") || (collision.collider.CompareTag("Target"))))
+        if (collision.collider.CompareTag("Boundary") || collision.collider.CompareTag("Target"))
         {
             // Play jump sound
             audioSource.Play();

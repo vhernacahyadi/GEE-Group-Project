@@ -168,7 +168,7 @@ MonoBehaviour:
   point: 8
   damageSound: {fileID: 8300000, guid: 5a7bed11ed53fa54587edca886c73a56, type: 3}
   detectionRange: 15
-  runSpeed: 10
+  runSpeed: 7
   normalSpeed: 3
   offCourseInterval: 0.1
   onCourseInterval: 0.5
