@@ -1,125 +1,118 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
-  <Class Name="Bounce">
+  <Class Name="Bounce" Collapsed="true">
     <Position X="1.5" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAACAAAEQAAAAAAAgAAAAAAACKACAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAACQAAEQAAAAAAAgAAAAAAACKAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Bounce.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BulletScript">
+  <Class Name="BulletScript" Collapsed="true">
     <Position X="4.25" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\BulletScript.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GameManager">
+  <Class Name="GameManager" Collapsed="true">
     <Position X="13" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAEAABAAABAAAYAAA=</HashCode>
       <FileName>Assets\Scripts\GameManager.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="EndTrigger">
+  <Class Name="EndTrigger" Collapsed="true">
     <Position X="10" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\EndTrigger.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GunShooter">
+  <Class Name="GunShooter" Collapsed="true">
     <Position X="15.75" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>IAQAAAAAICAACAAAAAAAAAAQAAAQAgABAAAAACAAAAA=</HashCode>
       <FileName>Assets\Scripts\GunShooter.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MovingPlatform">
+  <Class Name="MovingPlatform" Collapsed="true">
     <Position X="18.5" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAgBAAAAAAQAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\MovingPlatform.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="PlatformAttachPlayer">
+  <Class Name="PlatformAttachPlayer" Collapsed="true">
     <Position X="21" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\PlatformAttachPlayer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="PlayerCollidePlatform">
-    <Position X="23.75" Y="0.5" Width="2.25" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAQAACAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAE=</HashCode>
-      <FileName>Assets\Scripts\PlayerCollidePlatform.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="PlayerController">
+  <Class Name="PlayerController" Collapsed="true">
     <Position X="26.5" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAQAAgaAAiAAAAAEAAAQAAAJABAAAAAIAQAAAABAAAI=</HashCode>
       <FileName>Assets\Scripts\PlayerController.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="RandomSpawner">
+  <Class Name="RandomSpawner" Collapsed="true">
     <Position X="1.5" Y="6" Width="2.25" />
     <TypeIdentifier>
       <HashCode>ACQAACQAACAAAAIAAAFAAADAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\RandomSpawner.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="RotationController">
+  <Class Name="RotationController" Collapsed="true">
     <Position X="4.5" Y="6" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAQIAAAAACAAAAAAAAAAAAAAAAAAAAAAQAAAEAAAAAA=</HashCode>
+      <HashCode>AAwIAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\RotationController.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Score">
+  <Class Name="Score" Collapsed="true">
     <Position X="7.25" Y="8.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAQAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Score.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SlimeAI">
+  <Class Name="SlimeAI" Collapsed="true">
     <Position X="11.25" Y="6" Width="3" />
     <TypeIdentifier>
-      <HashCode>BVQAAACAASAJAQDAAAAAgGAAAAAAGAABQAAAAAAAAAg=</HashCode>
+      <HashCode>BVQAAACAASAJAQDAAAAAgWAAAAAAGAABAAAAAAAAAAg=</HashCode>
       <FileName>Assets\Scripts\SlimeAI.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SlimeController">
+  <Class Name="SlimeController" Collapsed="true">
     <Position X="15.25" Y="6" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>BFQAAgSAACAJAAAEAAwAACAAAAAAGAAJQAAAAAAAAAg=</HashCode>
+      <HashCode>BFAAAgSAAiAJAAAEAAwAASAAAAAAGAAJAAAAAAAAAAg=</HashCode>
       <FileName>Assets\Scripts\SlimeController.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SpawnEffect">
+  <Class Name="SpawnEffect" Collapsed="true">
     <Position X="18" Y="6" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAACAAAAAAgAAAABAAEAAAAAAgAAAAAAIAIAA=</HashCode>
       <FileName>Assets\Scripts\SpawnEffect.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TimerScript">
+  <Class Name="TimerScript" Collapsed="true">
     <Position X="20.5" Y="6" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAQAAAQAACAAAAAAAIAAAAAAAAAABAAAAAAAAAAAAQA=</HashCode>
       <FileName>Assets\Scripts\TimerScript.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CannonShotInteraction">
+  <Class Name="CannonShotInteraction" Collapsed="true">
     <Position X="23.5" Y="6" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAICAABAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Interaction\CannonShotInteraction.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Interactable">
+  <Class Name="Interactable" Collapsed="true">
     <Position X="26" Y="6" Width="2.25" />
     <NestedTypes>
       <Enum Name="Interactable.InteractionType" Collapsed="true">
@@ -133,42 +126,42 @@
       <FileName>Assets\Scripts\Interaction\Interactable.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="InteractButton">
+  <Class Name="InteractButton" Collapsed="true">
     <Position X="25.25" Y="9.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAACAAIAAAAAAAIAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Interaction\InteractButton.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="InteractCannon">
+  <Class Name="InteractCannon" Collapsed="true">
     <Position X="27.75" Y="9.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAICAAAAAAIAAAAAAAIAAQAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Interaction\InteractCannon.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="PlayerInteraction">
+  <Class Name="PlayerInteraction" Collapsed="true">
     <Position X="29" Y="6" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAQCBAAAACAAAAACAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>Assets\Scripts\Interaction\PlayerInteraction.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TargetExplosion2">
+  <Class Name="TargetExplosion2" Collapsed="true">
     <Position X="1.5" Y="13" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAABCCAAAAAAIAAAAAAAAAEABAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Interaction\TargetExplosion2.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GameOver">
+  <Class Name="GameOver" Collapsed="true">
     <Position X="4.25" Y="13" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAgAAAAAAAAAAEAAAAAA=</HashCode>
       <FileName>Assets\Scripts\UI Scripts\GameOver.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Leaderboard">
+  <Class Name="Leaderboard" Collapsed="true">
     <Position X="10" Y="13" Width="2.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
@@ -185,51 +178,58 @@
       <FileName>Assets\Scripts\UI Scripts\Leaderboard.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="LevelComplete">
+  <Class Name="LevelComplete" Collapsed="true">
     <Position X="13.25" Y="13" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\UI Scripts\LevelComplete.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MainMenu">
+  <Class Name="MainMenu" Collapsed="true">
     <Position X="16.25" Y="13" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\UI Scripts\MainMenu.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="PauseMenu">
+  <Class Name="PauseMenu" Collapsed="true">
     <Position X="19.5" Y="13" Width="2.25" />
     <TypeIdentifier>
       <HashCode>ABQgAAAAAAAAAAAAAAAAAAAAAAAAAAABAABAACgAIAA=</HashCode>
       <FileName>Assets\Scripts\UI Scripts\PauseMenu.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GameSession">
+  <Class Name="GameSession" Collapsed="true">
     <Position X="7" Y="13" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAgBAAAAAAQABAAAAAQQAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\UI Scripts\GameSession.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="VolumeSettings">
+  <Class Name="VolumeSettings" Collapsed="true">
     <Position X="22.5" Y="13" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\UI Scripts\SettingsMenu.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Doors">
+  <Class Name="Doors" Collapsed="true">
     <Position X="7.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAIQAAAAAAAAAACAAAAAAAAAAAAACAAAA=</HashCode>
       <FileName>Assets\Scripts\Doors.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="UnityEngine.MonoBehaviour">
+  <Class Name="UnityEngine.MonoBehaviour" Collapsed="true">
     <Position X="7.75" Y="3.75" Width="3" />
     <TypeIdentifier />
+  </Class>
+  <Class Name="FallPlatform" Collapsed="true">
+    <Position X="23.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FallPlatform.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
