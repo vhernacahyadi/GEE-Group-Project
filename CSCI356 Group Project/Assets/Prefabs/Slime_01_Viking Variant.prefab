@@ -171,5 +171,5 @@ MonoBehaviour:
   runSpeed: 7
   normalSpeed: 3
   offCourseInterval: 0.1
-  onCourseInterval: 0.5
+  onCourseInterval: 1.5
   escapePoints: []
