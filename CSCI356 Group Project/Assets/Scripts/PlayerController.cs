@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(transform.parent);
         mvX = Input.GetAxis("Horizontal") * Time.deltaTime * Speed;
         mvZ = Input.GetAxis("Vertical") * Time.deltaTime * Speed;
 
