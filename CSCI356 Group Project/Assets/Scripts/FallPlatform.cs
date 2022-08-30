@@ -11,7 +11,7 @@ public class FallPlatform : MonoBehaviour
 	}
 
 
-    void OnCollisionStay(Collision cls)
+    void OnCollisionEnter(Collision cls)
 	{
 		if (cls.gameObject.tag == "Player")
 		{
