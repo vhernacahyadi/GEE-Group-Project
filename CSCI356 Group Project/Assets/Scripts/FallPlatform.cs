@@ -5,9 +5,13 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class FallPlatform : MonoBehaviour
 {
+	[SerializeField]
+	private Transform startPoint;
+
 	// Start is called before the first frame update
 	void Start()
     {
+
 	}
 
 
@@ -15,10 +19,8 @@ public class FallPlatform : MonoBehaviour
 	{
 		if (cls.gameObject.tag == "Player")
 		{
-			if (SceneManager.GetActiveScene().name == "Level 2")
-			{
-				SceneManager.LoadScene("Level 2");
-			}
+			startPoint.position += new Vector3(0, 1.0f, 0);
+			cls.gameObject.transform.position = startPoint.position;
 		}
 	}
 }
