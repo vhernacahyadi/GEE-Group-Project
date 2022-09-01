@@ -19,8 +19,7 @@ public class FallPlatform : MonoBehaviour
 	{
 		if (cls.gameObject.tag == "Player")
 		{
-			startPoint.position += new Vector3(0, 1.0f, 0);
-			cls.gameObject.transform.position = startPoint.position;
+			cls.gameObject.transform.position = startPoint.position + new Vector3(0, 1.0f, 0);
 		}
 	}
 }
