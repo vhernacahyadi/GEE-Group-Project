@@ -17,13 +17,8 @@ public class FallPlatform : MonoBehaviour
 		{
 			if (SceneManager.GetActiveScene().name == "Level 2")
 			{
-				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1 + 1);
+				SceneManager.LoadScene("Level 2");
 			}
-			if (SceneManager.GetActiveScene().name == "Level 3")
-			{
-				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-			}
-
 		}
 	}
 }
